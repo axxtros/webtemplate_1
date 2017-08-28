@@ -1,0 +1,16 @@
+/* 
+    Created on : Aug 28, 2017, 8:45:40 AM
+    Author     : axtros
+*/
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  
+    
+    
+}
+
