@@ -12,6 +12,8 @@
         <link rel="stylesheet" type="text/css" href="css/main-tablet-portrait.css">
         <link rel="stylesheet" type="text/css" href="css/main-mobile-landscape.css">
         <link rel="stylesheet" type="text/css" href="css/main-mobile-portrait.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/page-controls.js"></script>
     </head>
     <body>
         
@@ -57,13 +59,67 @@
             #side menu<br/>
         </aside>
         
-        <main>            
-            #conent<br/>
-            #conent<br/>
-            #conent<br/>
-            #conent<br/>
-            #conent<br/>
-            #conent<br/>
+        <main>
+            <div id="main-content-div">
+                
+                <div class="content-block-div">
+                    <div class="block-title-div" onclick="toggleContentPanel(this);">
+                        <div class="block-openclose-icon-div">
+                            <img src="img/block_toggle_icon_open.svg" alt="Close block">
+                        </div>
+                        <div class="block-title-text-div">
+                            Schedule
+                        </div>
+                    </div>
+                    <div class="block-content-div" style="display: block;">
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>                   
+                    </div>                    
+                </div>
+                
+                <div class="content-block-div">
+                    <div class="block-title-div" onclick="toggleContentPanel(this);">
+                        <div class="block-openclose-icon-div">
+                            <img src="img/block_toggle_icon_open.svg" alt="Close block">
+                        </div>
+                        <div class="block-title-text-div">
+                            Invocies
+                        </div>
+                    </div>
+                    <div class="block-content-div" style="display: block;">
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>                   
+                    </div>                    
+                </div>
+                
+                <div class="content-block-div">
+                    <div class="block-title-div" onclick="toggleContentPanel(this);">
+                        <div class="block-openclose-icon-div">
+                            <img src="img/block_toggle_icon_open.svg" alt="Close block">
+                        </div>
+                        <div class="block-title-text-div">
+                            Dashboard
+                        </div>
+                    </div>
+                    <div class="block-content-div" style="display: block;">
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>
+                        #conent<br/>                   
+                    </div>                    
+                </div>
+                
+            </div>
         </main>        
                 
         <footer>

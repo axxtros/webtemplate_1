@@ -47,8 +47,7 @@
         background-color: var(--header-user-bg-color);
         float: right;
         width: var(--content-side-width-g);
-        min-height: var(--header-height-g);
-        border-bottom: 1px solid #e4e4e4;        
+        min-height: var(--header-height-g);        
     }
 
     #header-user-datas-div {
@@ -117,6 +116,34 @@
         height: auto;        
     }
 
+    .content-block-div {
+        border-top: 1px solid #ededed;
+    }
+    
+    .block-title-div {        
+        background-color: #f7f7f7;
+        padding: 0.5em;
+        min-height: 2em;
+    }
+    
+    .block-openclose-icon-div img {
+        float: left;
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0.3em 0 0 0;
+    }
+    
+    .block-title-text-div {
+        padding: 0.4em 0 0 2em;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .block-content-div {
+        background-color: #ffffff;
+        padding: 0.5em;
+    }
+    
     footer {
         background-color: var(--footer-bg-color);
         clear: both;
