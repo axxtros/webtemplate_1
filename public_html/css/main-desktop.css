@@ -33,8 +33,7 @@
 
     header {
         height: var(--header-height-g);
-        border-top: 1px solid #e4e4e4;
-        border-bottom: 1px solid #e4e4e4;
+        border-top: 1px solid #e4e4e4;        
     }
     
     #header-logo-div {
@@ -44,11 +43,12 @@
         min-height: var(--header-height-g);
     }
     
-    #header-user-div {
+    #header-right-div {
         background-color: var(--header-user-bg-color);
         float: right;
         width: var(--content-side-width-g);
-        min-height: var(--header-height-g);        
+        min-height: var(--header-height-g);
+        border-bottom: 1px solid #e4e4e4;        
     }
 
     #header-user-datas-div {
@@ -64,7 +64,7 @@
     #header-user-message-div {        
         float: left;
         margin: 0.5em 1em 0em 0em;
-    }
+    }    
     
     #header-user-message-div img {
         width: 1.8em;
@@ -73,8 +73,16 @@
     
     #header-user-name-div {        
         float: left;
-        margin: 0.8em 1em 0em 0em;
-        font-weight: bold;
+        margin: 0.5em 1em 0em 0em;
+        font-weight: bold;        
+        color: #000000;
+    }
+    
+    #header-user-status-div {
+        text-align: right;
+        font-weight: normal;
+        font-size: 0.8em;
+        color: #15b4ef;        
     }
     
     #header-user-pic-div {        
@@ -85,30 +93,12 @@
     #header-user-pic-div img {
         width: 3em;
         height: 3em;
-    }
-    
-/*    #header-user-message-div img {
-        float: right;                
-        width: 1.5em;
-        height: 1.5em;
-        margin: 0.6em 1em 0em 0em;
-    }
-    
-    #header-user-name-div {
-        float: right;                
-        margin: 0.8em 1em 0em 0em;
-        font-weight: bold;
-    }
-    
-    #header-user-pic-div img {
-        float: right;
-        width: 3em;
-        height: 3em; 
-        border-radius: 50%;
-    }*/
+    }    
     
     nav {
         background-color: var(--nav-bg-color);
+        border-bottom: 1px solid #e4e4e4;
+        display: none;  /* ha kell, akkor itt jelenítsd meg, és adj hozzá css-t */
     }
 
     aside {
@@ -124,7 +114,7 @@
         float: right;
         width: var(--content-side-width-g);
         display: block;
-        height: auto;
+        height: auto;        
     }
 
     footer {
