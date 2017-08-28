@@ -10,42 +10,104 @@
 
 @media (min-width: 1281px) {
 
-    :root {
-        /* dev temp variables */
-        --header-logo-bg-color: mediumseagreen;
-        --header-user-bg-color: rosybrown;
-        --nav-bg-color: appworkspace;
-        --aside-bg-color: menu;
-        --main-bg-color: thistle;
-        --footer-bg-color: activecaption;
-        
+    :root {        
         /* variables */
-        --left-side-width: 20%;
-        --content-side-width: 80%;
+        --body-width-g: 1000px;
+        --left-side-width-g: 20%;
+        --content-side-width-g: 80%;
+        --header-height-g: 4em;
+        
+        --header-logo-bg-color: #51d2b7;
+        --header-user-bg-color: #ffffff;
+        --nav-bg-color: #f7f7f7;
+        --aside-bg-color: #2a2d33;
+        --main-bg-color: #ffffff;
+        --footer-bg-color: #ededed;        
     }
     
     body {
-        width: 1000px;
+        width: var(--body-width-g);
+        margin-top: 5px;
         margin-left: auto;
         margin-right: auto;
     }
 
     header {
-        
+        height: var(--header-height-g);
+        border-top: 1px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
     }
     
     #header-logo-div {
         background-color: var(--header-logo-bg-color);
         float: left;
-        width: var(--left-side-width);
+        width: var(--left-side-width-g);
+        min-height: var(--header-height-g);
     }
     
     #header-user-div {
         background-color: var(--header-user-bg-color);
         float: right;
-        width: var(--content-side-width);
+        width: var(--content-side-width-g);
+        min-height: var(--header-height-g);        
     }
 
+    #header-user-datas-div {
+        background-color: #ffffff;        
+        height: calc(var(--header-height-g) - 1.1em);
+        margin: 0.5em 1em 0.5em 1em;
+    }
+    
+    #header-user-profile-div {
+        float: right;        
+    }
+    
+    #header-user-message-div {        
+        float: left;
+        margin: 0.5em 1em 0em 0em;
+    }
+    
+    #header-user-message-div img {
+        width: 1.8em;
+        height: 1.8em;
+    }
+    
+    #header-user-name-div {        
+        float: left;
+        margin: 0.8em 1em 0em 0em;
+        font-weight: bold;
+    }
+    
+    #header-user-pic-div {        
+        float: right;
+        margin: 0em 0em 0em 0em;
+    }
+    
+    #header-user-pic-div img {
+        width: 3em;
+        height: 3em;
+    }
+    
+/*    #header-user-message-div img {
+        float: right;                
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.6em 1em 0em 0em;
+    }
+    
+    #header-user-name-div {
+        float: right;                
+        margin: 0.8em 1em 0em 0em;
+        font-weight: bold;
+    }
+    
+    #header-user-pic-div img {
+        float: right;
+        width: 3em;
+        height: 3em; 
+        border-radius: 50%;
+    }*/
+    
     nav {
         background-color: var(--nav-bg-color);
     }
@@ -53,14 +115,15 @@
     aside {
         background-color: var(--aside-bg-color);
         float: left;
-        width: var(--left-side-width);
+        width: var(--left-side-width-g);
         height: auto;
+        color: #aeaeb0;
     }
 
     main {
         background-color: var(--main-bg-color);
         float: right;
-        width: var(--content-side-width);
+        width: var(--content-side-width-g);
         display: block;
         height: auto;
     }
@@ -68,6 +131,7 @@
     footer {
         background-color: var(--footer-bg-color);
         clear: both;
+        color: #2a2d33;
     }
     
 }
