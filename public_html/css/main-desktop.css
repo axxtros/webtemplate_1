@@ -10,38 +10,64 @@
 
 @media (min-width: 1281px) {
 
+    :root {
+        /* dev temp variables */
+        --header-logo-bg-color: mediumseagreen;
+        --header-user-bg-color: rosybrown;
+        --nav-bg-color: appworkspace;
+        --aside-bg-color: menu;
+        --main-bg-color: thistle;
+        --footer-bg-color: activecaption;
+        
+        /* variables */
+        --left-side-width: 20%;
+        --content-side-width: 80%;
+    }
+    
     body {
-        font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 400;
-        line-height: 20px;
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     header {
         
     }
+    
+    #header-logo-div {
+        background-color: var(--header-logo-bg-color);
+        float: left;
+        width: var(--left-side-width);
+    }
+    
+    #header-user-div {
+        background-color: var(--header-user-bg-color);
+        float: right;
+        width: var(--content-side-width);
+    }
 
     nav {
-        
+        background-color: var(--nav-bg-color);
     }
 
     aside {
+        background-color: var(--aside-bg-color);
         float: left;
-        width: 250px;
+        width: var(--left-side-width);
         height: auto;
     }
 
     main {
+        background-color: var(--main-bg-color);
         float: right;
-        width: 750px;
+        width: var(--content-side-width);
         display: block;
         height: auto;
     }
 
     footer {
+        background-color: var(--footer-bg-color);
         clear: both;
-    }    
+    }
     
 }

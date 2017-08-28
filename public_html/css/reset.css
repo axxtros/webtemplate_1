@@ -15,16 +15,13 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 /*
@@ -36,6 +33,9 @@ time, mark, audio, video {
 
     CSS @media borders: (innen vannak a css határok belőve)
     https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488
+
+    CSS variable tutorial:
+    https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care
 
 */
 
