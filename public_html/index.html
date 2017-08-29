@@ -15,7 +15,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/page-controls.js"></script>
     </head>
-    <body onload="pageOnLoadEvent();" onresize="setMessageNotificationDiv();">
+    <body onload="pageOnLoadEvent();" onresize="setMessageNotificationDiv();" onscroll="setMessageNotificationDiv();">
         
         <header>
             <div id="header-logo-div">
@@ -30,8 +30,8 @@
                             <a href="#" title="Unread notification">
                                 <img src="img/user-message.png" alt="user-msg">
                             </a>
-                            <div id="header-message-number-notification-div">
-                                99
+                            <div id="header-message-number-notification-div" style="display: block;">
+                                10
                             </div>
                         </div>                        
                         <div id="header-user-name-div">                            

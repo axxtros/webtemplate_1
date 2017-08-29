@@ -78,7 +78,7 @@
     }
     
     #header-message-number-notification-div {
-        position: fixed;        
+        position: absolute;        
         background-color: red;
         width: 1.4em;
         height: 1.3em;

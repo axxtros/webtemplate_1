@@ -13,8 +13,15 @@ function setMessageNotificationDiv() {
     var notificationNumberDiv = document.getElementById("header-message-number-notification-div");
     var notificationLeft = messageIcon.offsetLeft + 15;
     notificationNumberDiv.style.left = notificationLeft+'px';
-    var notificationTop = messageIcon.offsetTop - 5;
-    notificationNumberDiv.style.top = notificationTop+'px';
+    var notificationTop = messageIcon.offsetTop - 5;    
+    var calcCoord = 0;
+    var windowOffset = $(window).scrollTop();
+    if(windowOffset === 0) {
+        calcCoord = notificationTop;        
+    } else {        
+        calcCoord = windowOffset - notificationTop+'px';
+    }   
+    notificationNumberDiv.style.top = calcCoord + 'px';
 }
 
 function toggleContentPanel(contentblock) {        
