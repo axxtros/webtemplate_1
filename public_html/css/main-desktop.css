@@ -22,7 +22,8 @@
         --nav-bg-color: #f7f7f7;
         --aside-bg-color: #2a2d33;
         --main-bg-color: #ffffff;
-        --footer-bg-color: #ededed;        
+        --footer-bg-color: #ededed;
+        --side-menu-text-color: #aeaeb0;
     }
     
     body {
@@ -112,10 +113,65 @@
         background-color: var(--aside-bg-color);
         float: left;
         width: var(--left-side-width-g);
-        height: auto;
-        color: #aeaeb0;
+        height: auto;        
+    }    
+    
+    .side-menu-block {
+        padding: 1em 0 1em 0;        
     }
-
+    
+    .side-menu-block-title {
+        border-bottom: 1px solid #7f8083;
+        padding: 0 0 0.5em 1em;
+        color: #7f8083;
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+    
+    .side-menu-block-items {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    .side-menu-block-items ul {
+        list-style-type: none;
+        padding: 0.5em 0 0 0;
+    }
+    
+    .side-menu-block-items ul li {
+        clear: both;
+    }
+    
+    .side-menu-block-items ul li a {
+        color: var(--side-menu-text-color);        
+        text-decoration: none;
+    }                
+        
+    .side-menu-item-wrapper-div {
+        height: 1.8em;
+        padding: 0.3em 0 0.3em 0;        
+    }
+    
+    .side-menu-block-items ul li a .side-menu-item-wrapper-div:hover {
+        background-color: #656c7e;
+        color: white;
+    }        
+    
+    .side-menu-item-icon {
+        float: left;
+    }
+    
+    .side-menu-item-icon img {
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0.1em 0 0 1em;
+    }
+    
+    .side-menu-item-title {
+        padding: 0.4em 0 0 0.5em;
+        float: left;
+    }
+    
     main {
         background-color: var(--main-bg-color);
         float: right;

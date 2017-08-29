@@ -17,3 +17,24 @@ function toggleContentPanel(contentblock) {
         });
     }
 }
+
+function selectedSideMenuItemIconChange(menuitem) {
+    if(menuitem !== null) {
+        var imageitem = $(menuitem).children().children();
+        if(imageitem !== null) {
+            var srcname = $(imageitem).attr('src');
+            $(imageitem).attr('src', srcname.substring(0, srcname.length - 4) + '-selected.svg');
+        }
+    }
+}
+
+function unSelectedSideMenuItemIconChange(menuitem) {
+    if(menuitem !== null) {
+        var imageitem = $(menuitem).children().children();
+        if(imageitem !== null) {
+            var srcname = $(imageitem).attr('src');
+            $(imageitem).attr('src', srcname.substring(0, srcname.length - 13) + '.svg');   //13 = '-selected.svg'
+        }
+    }
+}
+
