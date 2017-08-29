@@ -8,35 +8,244 @@
   ##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1280px) {
  
-    body {
+    :root {        
+        /* variables */
+        --body-width-g: 1000px;
+        --left-side-width-g: 20%;
+        --content-side-width-g: 80%;
+        --header-height-g: 4em;
         
+        --header-logo-bg-color: #51d2b7;
+        --header-user-bg-color: #ffffff;
+        --nav-bg-color: #f7f7f7;
+        --aside-bg-color: #2a2d33;
+        --main-bg-color: #ffffff;
+        --footer-bg-color: #ededed;
+        --side-menu-text-color: #898c95;        //#aeaeb0;
+        --side-menu-item-color: #898c95;        //R:137 G:140 B:149     -> ezek az oldalsó menű ikonjainak alapszine, + megnyitva fehér #ffffff
+    }
+    
+    body {
+        width: var(--body-width-g);
+        margin-left: auto;
+        margin-right: auto;        
     }
 
     header {
-        
+        height: var(--header-height-g);
     }
-
-    nav {
-
-    }
-
-    aside {
+    
+    #header-logo-div {
+        background-color: var(--header-logo-bg-color);
         float: left;
-        width: 250px;
-        height: auto;
-    }
-
-    main {
+        width: var(--left-side-width-g);
+        min-height: var(--header-height-g);        
+    }        
+    
+    #header-logo-div img {
+        width: 3em;
+        height: 3em;
+        padding: 0.4em 0 0 0.4em;
+    }        
+    
+    #header-right-div {
+        background-color: var(--header-user-bg-color);
         float: right;
-        width: 750px;
-        display: block;
-        height: auto;
+        width: var(--content-side-width-g);
+        min-height: var(--header-height-g);        
     }
 
-    footer {
+    #header-user-datas-div {
+        background-color: #ffffff;        
+        height: calc(var(--header-height-g) - 1.1em);
+        margin: 0.5em 1em 0.5em 1em;
+    }
+    
+    #header-user-profile-div {
+        float: right;        
+    }
+    
+    #header-user-message-div {        
+        float: left;
+        margin: 0.5em 1em 0em 0em;
+    }    
+    
+    #header-user-message-div img {
+        width: 1.8em;
+        height: 1.8em;        
+    }
+    
+    #header-message-number-notification-div {
+        position: fixed;        
+        background-color: red;
+        width: 1.4em;
+        height: 1.3em;
+        color: white;        
+        font-size: 0.8em;
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    #header-user-name-div {        
+        float: left;
+        margin: 0.5em 1em 0em 0em;
+        font-weight: bold;        
+        color: #000000;
+    }
+    
+    #header-user-status-div {
+        text-align: right;
+        font-weight: normal;
+        font-size: 0.8em;
+        color: #15b4ef;        
+    }
+    
+    #header-user-pic-div {        
+        float: right;
+        margin: 0em 0em 0em 0em;
+    }
+    
+    #header-user-pic-div img {
+        width: 3em;
+        height: 3em;
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+    }        
+    
+    nav {
+        background-color: var(--nav-bg-color);
+        border-bottom: 1px solid #e4e4e4;
+        display: none;  /* ha kell, akkor itt jelenítsd meg, és adj hozzá css-t */
+    }
+
+    #center-content-div {
+        background-color: var(--aside-bg-color);
+        overflow: auto;
+    }
+    
+    aside {
+        background-color: var(--aside-bg-color);
+        float: left;
+        width: var(--left-side-width-g);
+        height: auto;        
+    }    
+    
+    .side-menu-block {
+        padding: 1em 0 1em 0;        
+    }
+    
+    .side-menu-block-title {
+        border-bottom: 1px solid #7f8083;
+        padding: 0 0 0.5em 1em;
+        color: #7f8083;
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+    
+    .side-menu-block-items {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    .side-menu-block-items ul {
+        list-style-type: none;
+        padding: 0.5em 0 0 0;
+    }
+    
+    .side-menu-block-items ul li {
         clear: both;
+    }
+    
+    .side-menu-block-items ul li a {
+        color: var(--side-menu-text-color);        
+        text-decoration: none;
+    }                
+        
+    .side-menu-item-wrapper-div {
+        height: 1.8em;
+        padding: 0.3em 0 0.3em 0;        
+    }
+    
+    .side-menu-block-items ul li a .side-menu-item-wrapper-div:hover {
+        background-color: #656c7e;
+        color: white;
+    }        
+    
+    .side-menu-item-icon {
+        float: left;
+    }
+    
+    .side-menu-item-icon img {
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0.1em 0 0 1em;
+    }
+    
+    .side-menu-item-title {
+        padding: 0.4em 0 0 0.5em;
+        float: left;
+    }
+    
+    main {
+        background-color: var(--main-bg-color);
+        float: right;
+        width: var(--content-side-width-g);
+        display: block;
+        height: auto;        
+    }
+
+    .content-block-div {
+        border-top: 1px solid #ededed;
+    }
+    
+    .block-title-div {        
+        background-color: #f7f7f7;
+        padding: 0.5em;
+        min-height: 2em;
+    }
+    
+    .block-title-div:hover {        
+        cursor: pointer;
+    }
+    
+    .block-openclose-icon-div img {
+        float: left;
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0.3em 0 0 0;
+    }
+    
+    .block-title-text-div {
+        padding: 0.4em 0 0 2em;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    
+    .block-content-div {
+        background-color: #ffffff;
+        padding: 0.5em;
+    }
+    
+    footer {
+        background-color: var(--footer-bg-color);
+        border-bottom: 1px solid #ededed;
+        clear: both;
+        color: #2a2d33;
+        height: 2em;
+    }
+    
+    #footer-copyright-div {
+        float: right;
+        font-size: 0.8em;
+        padding: 0.8em 1em 0 0;
     }
   
 }

@@ -48,16 +48,7 @@
         width: 3em;
         height: 3em;
         padding: 0.4em 0 0 0.4em;
-    }
-    
-    #header-logo-text-div {
-        float: right;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        font-size: 1.5em;
-        padding: 1em 0.4em 0 0;
-    }
+    }        
     
     #header-right-div {
         background-color: var(--header-user-bg-color);
