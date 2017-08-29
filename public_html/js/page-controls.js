@@ -4,6 +4,19 @@
     Lapvezérlő függvények.
 */
 
+function pageOnLoadEvent() {
+    setMessageNotificationDiv();
+}
+
+function setMessageNotificationDiv() {
+    var messageIcon = document.getElementById("header-user-message-div");
+    var notificationNumberDiv = document.getElementById("header-message-number-notification-div");
+    var notificationLeft = messageIcon.offsetLeft + 15;
+    notificationNumberDiv.style.left = notificationLeft+'px';
+    var notificationTop = messageIcon.offsetTop - 5;
+    notificationNumberDiv.style.top = notificationTop+'px';
+}
+
 function toggleContentPanel(contentblock) {        
     if(contentblock !== null) {        
         $(contentblock).next().slideToggle( "fast", function() {

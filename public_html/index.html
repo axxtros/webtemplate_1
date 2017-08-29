@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Template</title>
+        <title>Lynxstudio - Template page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -15,7 +15,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/page-controls.js"></script>
     </head>
-    <body>
+    <body onload="pageOnLoadEvent();" onresize="setMessageNotificationDiv();">
         
         <header>
             <div id="header-logo-div">
@@ -28,7 +28,10 @@
                             <a href="#" title="Unread notification">
                                 <img src="img/user-message.png" alt="user-msg">
                             </a>
-                        </div>
+                            <div id="header-message-number-notification-div">
+                                99
+                            </div>
+                        </div>                        
                         <div id="header-user-name-div">                            
                             <a href="#" title="Personal account" style="text-decoration: none; color: #000000;">
                                 Sthepanie Hawking                                                           
@@ -43,7 +46,7 @@
                             </a>
                         </div>                        
                     </div>
-                </div>            
+                </div>                
             </div>
         </header>
         
