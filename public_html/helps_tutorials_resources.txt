@@ -1,5 +1,11 @@
-Parralax tutorials:
+Parallax tutorials:
 http://callmenick.com/post/simple-parallax-scrolling-effect
+
+Parallax multiplayer tutorial:
+http://css-parallax.webflow.io/
 
 Lufthansa Systems:
 https://job.lhsystems.hu/nyitooldal
+
+Feljövő szövegek animálva a képeken:
+http://themes.iamabdus.com/biznex/1.1/
