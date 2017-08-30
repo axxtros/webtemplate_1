@@ -1,0 +1,47 @@
+/* 
+    Created on : Aug 30, 2017, 11:21:42 AM
+    Author     : fs
+*/
+
+@media (min-width: 1281px) {
+
+    body {
+        padding-top: 100px;
+    }
+    
+    .main-menu {        
+        margin: 0 auto;
+        overflow: hidden;
+        background-color: white;
+        position: fixed; 
+        top: 0; 
+        width: 100%;
+        height: 100px;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .parallax-1 {
+        background-image: url("../../img/login/template/1.jpg");
+        height: 600px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .parallax-2 {
+        background-image: url("../../img/login/template/2.jpg");
+        height: 600px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+}
+
+
