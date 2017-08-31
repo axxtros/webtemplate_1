@@ -3,7 +3,7 @@
     Author     : fs
 */
 
-@media (min-width: 1281px) {
+@media (min-width: 1024px) {
 
     :root {
         --body-width-g: 1000px;
@@ -41,7 +41,7 @@
     
     .header-logo-div {
         float: left;
-        width: 50%;
+        width: 30%;
     }
     
     .header-logo-div img {
@@ -52,16 +52,33 @@
     
     .header-menu-div {
         float: left;
-        width: 50%;
+        width: 70%;
+    }
+    
+    .header-menu-wrapper-div {
+        float: right;
+        font-size: 0.9em;
     }
     
     .header-menu-item-div {
         float: left;
+        font-weight: bold;
+        height: var(--header-width-g);        
+        padding: 0 0 0 0.1em;
+        vertical-align: middle;
+        line-height: var(--header-width-g);
     }
     
     .header-menu-item-div a {
         text-decoration: none;
         color: #2a2d33;
+        padding: 0.5em;
+    }    
+    
+    .header-menu-item-div a:hover {
+        color: white;
+        background-color: #2a2d33;
+        padding: 0.8em 0.5em 0.8em 0.5em;
     }
     
     .parallax {

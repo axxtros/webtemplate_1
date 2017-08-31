@@ -17,21 +17,27 @@
                     <img src="img/lynx-logo.jpg" alt="logo"> 
                 </div>
                 <div class="header-menu-div">
-                    
-                    <div class="header-menu-item-div">
-                        <a href="#">
-                            Szolgáltatások
-                        </a>
-                    </div>
-                    <div class="header-menu-item-div">
-                        <a href="#">
-                            Díjak
-                        </a>
-                    </div>
-                    <div class="header-menu-item-div">
-                        <a href="#">
-                            Regisztráció
-                        </a>
+                    <div class="header-menu-wrapper-div">
+                        <div class="header-menu-item-div">
+                            <a href="#introdaction-content" onclick="scrollToContent(this)">
+                                BEMUTATKOZÁS
+                            </a>
+                        </div>
+                        <div class="header-menu-item-div">
+                            <a href="#services-content" onclick="scrollToContent(this)">
+                                SZOLGÁLTATÁSOK
+                            </a>
+                        </div>
+                        <div class="header-menu-item-div">
+                            <a href="#prices-content" onclick="scrollToContent(this)">
+                                DÍJAK
+                            </a>
+                        </div>
+                        <div class="header-menu-item-div">
+                            <a href="#registration-content" onclick="scrollToContent(this)">
+                                REGISZTRÁCIÓ
+                            </a>
+                        </div>                        
                     </div>
                     
                 </div>
@@ -45,7 +51,7 @@
             </div>
         </div>
 
-        <div class="content">
+        <div id="introdaction-content">
             <div class="container">
                 <h2>Lorem Ipsum Dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
@@ -64,7 +70,7 @@
             </div>
         </div>
         
-        <div class="content">
+        <div id="services-content">
             <div class="container">
               <h2>Lorem Ipsum Dolor</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>

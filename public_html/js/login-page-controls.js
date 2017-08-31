@@ -10,3 +10,7 @@
         //$('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');
     };
 })();
+
+function scrollToContent(anchorTag) {
+    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top}, 500);
+}
