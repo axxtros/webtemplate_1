@@ -1,4 +1,4 @@
-Parallax tutorials:
+Advanced parallax tutorials:
 http://callmenick.com/post/simple-parallax-scrolling-effect
 
 Parallax multiplayer tutorial:

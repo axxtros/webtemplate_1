@@ -5,46 +5,80 @@
 
 @media (min-width: 1281px) {
 
+    :root {
+        --body-width-g: 1000px;
+        --header-width-g: 60px;
+        --parallax-bg-image-height: 600px;
+    }
+    
     body {
-        padding-top: 60px;
-    }
-    
-    .header-container {        
-        margin: 0 auto;
-        overflow: hidden;
-        background-color: white;
-        position: fixed; 
-        top: 0; 
-        width: 100%;
-        height: 60px;
-    }
-    
-    .main-menu {
-        max-width: 1000px;
-        margin: 0 auto;
+        padding-top: var(--header-width-g);        
+        /*font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+        font-family: HelveticaDLH-Medium,Arial,Helvetica,sans-serif;
+        font-size: 0.9em;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1em;
+        letter-spacing: -0.4px;
     }
     
     .container {
-        max-width: 1000px;
+        max-width: var(--body-width-g);
         margin: 0 auto;
+        font-family: HelveticaDLH-Light,Arial,Helvetica,sans-serif;
+    }
+    
+    .header {        
+        margin: 0 auto;
+        overflow: hidden;
+        position: fixed; 
+        top: 0; 
+        background-color: white;
+        width: 100%;
+        height: var(--header-width-g);
+    }
+    
+    .header-logo-div {
+        float: left;
+        width: 50%;
+    }
+    
+    .header-logo-div img {
+        width: 3em;
+        height: 3em;
+        padding: 0.4em 0 0 0;
+    }
+    
+    .header-menu-div {
+        float: left;
+        width: 50%;
+    }
+    
+    .header-menu-item-div {
+        float: left;
+    }
+    
+    .header-menu-item-div a {
+        text-decoration: none;
+        color: #2a2d33;
+    }
+    
+    .parallax {
+        min-height: var(--parallax-bg-image-height);
+        background-attachment: fixed;
+        background-position: center;        
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: var(--parallax-bg-image-height);
     }
     
     .parallax-1 {
-        background-image: url("../../img/login/template/4.jpg");
-        height: 600px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url("../../img/login/template/1.jpg");        
     }
 
     .parallax-2 {
-        background-image: url("../../img/login/template/2.jpg");
-        height: 600px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url("../../img/login/template/2.jpg");        
     }
     
 }

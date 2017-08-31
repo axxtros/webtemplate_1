@@ -4,3 +4,9 @@
     Lapvezérlő függvények.
 */
 
+(function(){    
+    window.onscroll = function(){
+        var scrolled = $(window).scrollTop();
+        //$('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');
+    };
+})();
