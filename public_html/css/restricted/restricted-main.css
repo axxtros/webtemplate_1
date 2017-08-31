@@ -3,14 +3,14 @@
     Author     : fs
 */
 
-@import url(reset.css);
-@import url(common.css);
-@import url(main-desktop.css);
-@import url(main-laptop.css);
-@import url(main-mobile-landscape.css);
-@import url(main-mobile-portrait.css);
-@import url(main-tablet-landscape.css);
-@import url(main-tablet-portrait.css);
+@import url(restricted-reset.css);
+@import url(restricted-common.css);
+@import url(restricted-desktop.css);
+@import url(restricted-laptop.css);
+@import url(restricted-mobile-landscape.css);
+@import url(restricted-mobile-portrait.css);
+@import url(restricted-tablet-landscape.css);
+@import url(restricted-tablet-portrait.css);
 
 
 
