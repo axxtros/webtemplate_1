@@ -9,6 +9,10 @@
         --body-width-g: 1000px;
         --header-width-g: 60px;
         --parallax-bg-image-height: 600px;
+        
+        --login-panel-width: 30em;
+        --login-panel-height: 30em;
+        --login-panel-wrapper-height: 4em;      // --login-panel-height/5
     }
     
     body {
@@ -82,12 +86,74 @@
     }
     
     .login-panel-base-div {
-        width: 30em;
-        height: 50px;
+        width: var(--login-panel-width);
+        height: var(--login-panel-height);
         z-index: 100;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.4);
         float: right;
         margin: 1em 0.6em 0 0;
+    }
+    
+    .login-text-wrapper {
+        height: 14em;        
+    }
+    
+    .login-text-wrapper img {
+        width: 6em;
+        height: 8em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .login-input-wrapper-container {
+        height: var(--login-panel-wrapper-height);
+    }            
+    
+    .login-input-wrapper {
+        background: rgba(255, 255, 255, 0.4);
+        width: 90%;
+        height: 50%;
+        z-index: 110;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .login-input-icon-wrapper {        
+        float: left;
+        width: 3em;
+        /*border-right: 1px solid black;*/
+    }
+    
+    .login-input-icon-wrapper img {
+        width: 2.2em;
+        height: 2.2em;
+    }
+    
+    .login-input-element-wrapper {
+        float: left;
+        width: 24em;
+    }
+    
+    .login-input-element-wrapper input {
+        width: 100%;
+        height: 3em;
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        outline: none;
+    }
+    
+    .login-input-element-wrapper input:focus {
+        outline: none;
+    }
+    
+    .login-button-wrapper {
+        height: var(--login-panel-wrapper-height);
+    }
+    
+    .login-extra-wrapper {
+        height: var(--login-panel-wrapper-height);
     }
     
     .parallax {
