@@ -38,16 +38,16 @@
     }
     
     #header-logo-div {
-        background-color: var(--header-logo-bg-color);
+        background-color: white; /*var(--header-logo-bg-color);*/
         float: left;
         width: var(--left-side-width-g);
         min-height: var(--header-height-g);        
     }        
     
     #header-logo-div img {
-        width: 3em;
+        width: 13em;
         height: 3em;
-        padding: 0.4em 0 0 0.4em;
+        padding: 0.5em 0 0 0.4em;
     }        
     
     #header-right-div {

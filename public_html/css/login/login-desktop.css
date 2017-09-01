@@ -11,7 +11,7 @@
         --parallax-bg-image-height: 600px;
         
         --login-panel-width: 30em;
-        --login-panel-height: 30em;
+        --login-panel-height: 24em;
         --login-panel-wrapper-height: 4em;      // --login-panel-height/5
         --login-panel-wrapper-width: 24em;        
     }
@@ -94,10 +94,11 @@
         background: rgba(255, 255, 255, 0.4);
         float: right;
         margin: 1em 0.6em 0 0;
+        border-radius: 25px;
     }
     
     .login-text-wrapper {
-        height: 14em;        
+        height: 8em;        
     }
     
     .login-text-wrapper img {
@@ -156,22 +157,77 @@
     
     .login-button-wrapper {
         width: var(--login-panel-wrapper-width);
-        height: var(--login-panel-wrapper-height);
-        display: block;
-        margin-left: auto;
-        margin-right: auto;        
+        height: var(--login-panel-wrapper-height);        
     }
     
-    .login-extra-wrapper {
-        height: var(--login-panel-wrapper-height);
+    .login-button-wrapper input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 14em;
+        height: 3em;
+        background-color: #4a8bf5;
+        border-style: none;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+    
+    .login-button-wrapper input:hover {
+        cursor: pointer;
+        background-color: #689cf3;
+        box-shadow: 0 0 10px #719ECE;
+    }
+    
+    .login-addictional-content-wrapper {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    .login-remember-me-checkbox-wrapper {
+        float: left;
+    }
+    
+    .login-remember-me-checkbox-wrapper input {
+        width: 1em;
+        height: 1em;
+        padding: 0;
+        margin:0;
+        vertical-align: bottom;
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    .login-remember-me-checkbox-wrapper label {
+        padding: 0 0 0 0.3em;
+        color: #2a2d33;
+        font-weight: bold;
+    }
+    
+    .login-forget-password-link-wrapper {
+        float: right;        
+    }
+    
+    .login-forget-password-link-wrapper a {
+        text-decoration: none;
+        color: #4a8bf5;
+        font-weight: bold;
+    }
+    
+    .login-forget-password-link-wrapper a:hover {
+        color: #689cf3;
+        box-shadow: 0 0 10px #719ECE;
     }
     
     .parallax {   
         height: var(--parallax-bg-image-height);
         background-attachment: fixed;
-        background-position: top;        
+        background-position: bottom;        
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    
+    .first-parallax {
+        height: 800px;
+        background-position: top;        
     }
     
     .parallax-1 {
