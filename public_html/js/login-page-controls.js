@@ -6,6 +6,11 @@
 
 var scrolled;
 
+function initLoginPage() {
+    $('.first-parallax').css({'background-position-y':0+'px'});    
+    $('.second-parallax').css({'background-position-y':100+'px'});
+}
+
 /*
  * Háttérkép parallax animációja, ha kell akkor itt programozd le.
  * @returns {undefined}

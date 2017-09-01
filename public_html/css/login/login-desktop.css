@@ -217,18 +217,18 @@
         box-shadow: 0 0 10px #719ECE;
     }
     
+    .first-parallax {
+        height: 800px !important;
+        background-position: bottom;
+    }
+    
     .parallax {   
         height: var(--parallax-bg-image-height);
         background-attachment: fixed;
-        background-position: bottom;        
+        background-position: center;        
         background-repeat: no-repeat;
         background-size: cover;
-    }
-    
-    .first-parallax {
-        height: 800px;
-        background-position: top;        
-    }
+    }    
     
     .parallax-1 {
         background-image: url("../../img/login/template/1.jpg");        
