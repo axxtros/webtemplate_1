@@ -4,20 +4,23 @@
     Lapvezérlő függvények.
 */
 
+var scrolled;
+
 /*
  * Háttérkép parallax animációja, ha kell akkor itt programozd le.
  * @returns {undefined}
  */
-//(function(){    
-//    window.onscroll = function(){
-//        var scrolled = $(window).scrollTop();
-//        //$('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');
-//    };
-//})();
+(function(){    
+    window.onscroll = function(){
+        scrolled = $(window).scrollTop();
+        $('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');      //a 0.2 egy viszonyszám, amelyet az éppen alkalmazott képekhez kell igazítani
+    };
+})();
 
 /*
- * A parallax weboldalon az adott tartalomrészhez scrollozik animáltan.
+ * A parallax weboldalon a menüpont választás után az adott tartalomrészhez scrollozik animáltan.
  */
 function scrollToContent(anchorTag) {
-    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - 60}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (--header-width-g)!
+    event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás
+    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - 60}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
 }

@@ -1,10 +1,10 @@
-Advanced parallax tutorials:
+Advanced parallax tutorials (ezt nézd meg, ha parallax oldalt akarsz készíteni, ez egy jó tutorial):
 http://callmenick.com/post/simple-parallax-scrolling-effect
 
 Parallax multiplayer tutorial:
 http://css-parallax.webflow.io/
 
-Lufthansa Systems:
+Lufthansa Systems weboldal:
 https://job.lhsystems.hu/nyitooldal
 
 Feljövő szövegek animálva a képeken:
