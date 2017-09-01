@@ -217,6 +217,41 @@
         box-shadow: 0 0 10px #719ECE;
     }
     
+    .page-title-base-div {
+        z-index: 200;
+        background: none;
+        float: none;
+        padding: 33em 0 0 0;        
+    }       
+    
+    .page-title-wrapper-div {
+        float: right;        
+        padding: 1em 0 0 0;        
+        clear: both;
+    }
+    
+    .page-title {
+        font-size: 3.5em;
+    }
+    
+    .page-sub-title-1-wrapper-div {
+        float: right; 
+        padding: 2em 0 0 5em;
+    }
+    
+    .page-sub-title-1 {
+        font-size: 2em;
+    }
+    
+    .page-sub-title-2-wrapper-div {
+        float: right; 
+        padding: 4em 0 0 5em;
+    }
+    
+    .page-sub-title-2 {
+        font-size: 1.4em;
+    }
+    
     .first-parallax {
         height: 800px !important;
         background-position: bottom;
