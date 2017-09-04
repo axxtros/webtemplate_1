@@ -8,11 +8,12 @@
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
+/*@media (min-width: 1281px) {*/
+@media (min-width: 1024px) {
 
     :root {        
         /* variables */
-        --body-width-g: 1000px;
+        --body-width-g: 1000px;        
         --left-side-width-g: 20%;
         --content-side-width-g: 80%;
         --header-height-g: 4em;

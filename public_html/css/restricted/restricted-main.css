@@ -6,7 +6,7 @@
 @import url(restricted-reset.css);
 @import url(restricted-common.css);
 @import url(restricted-desktop.css);
-@import url(restricted-laptop.css);
+/*@import url(restricted-laptop.css);*/
 @import url(restricted-mobile-landscape.css);
 @import url(restricted-mobile-portrait.css);
 @import url(restricted-tablet-landscape.css);
