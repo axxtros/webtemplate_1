@@ -105,16 +105,44 @@
                                 </a>
                             </li>                            
                             <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                <a href="javascript:void(0)">
+                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
                                         <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close.svg" alt="Documents menu">
                                         </div>
                                         <div class="side-menu-item-title">
-                                            Üzleti szövegek
+                                            Főmenü
                                         </div>
                                     </div>
-                                </a>
+                                </a>                                
+                                <div class="side-menu-item-submenu-1-wrapper-div">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="side-menu-item-submenu-1-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
+                                                    <div class="side-menu-item-submenu-1-icon">
+                                                        <img class="side-menu-item-submenu-1-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                    </div>
+                                                    <div class="side-menu-item-submenu-1-title">
+                                                        Almenü 1
+                                                    </div>                                                        
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="side-menu-item-submenu-1-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                                    <div class="side-menu-item-submenu-1-icon">
+                                                        <img class="side-menu-item-submenu-1-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                    </div>
+                                                    <div class="side-menu-item-submenu-1-title">
+                                                        Almenü 2
+                                                    </div>                                                        
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>                                    
+                                </div>
                             </li>                            
                             <li>
                                 <a href="#">
@@ -126,14 +154,7 @@
                                             Kiejtés gyakorlat
                                         </div>
                                     </div>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a>
-                                            Sub-menu 1                                            
-                                        </a>
-                                    </li>
-                                </ul>
+                                </a>                                
                             </li>                            
                         </ul>
                     </div>

@@ -194,6 +194,45 @@
         float: left;
     }
     
+    .side-menu-item-submenu-1-wrapper-div {        
+        padding: 0em;
+        display: none;
+    }
+    
+    .side-menu-item-submenu-1-wrapper-div ul {
+        padding: 0em;
+    }
+    
+    .side-menu-item-submenu-1-wrapper-div ul li {
+        padding: 0.2em 0 0.2em 0;
+    }        
+    
+    .side-menu-item-submenu-1-item-wrapper-div {
+        height: 1.4em;
+    }
+    
+    .side-menu-item-submenu-1-item-wrapper-div:hover {
+        background-color: #656c7e;
+        color: white;
+    }
+    
+    .side-menu-item-submenu-1-icon {
+        float: left;
+    }
+    
+    .side-menu-item-submenu-1-icon img {
+        width: 1em;
+        height: 1em;
+        padding: 0.1em 0 0 2.6em;
+    }
+    
+    .side-menu-item-submenu-1-title {
+        float: left;
+        padding: 0.2em 0 0 0.5em;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+    
     main {
         background-color: var(--main-bg-color);
         float: right;
