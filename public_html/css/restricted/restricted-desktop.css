@@ -151,7 +151,7 @@
     }
     
     .side-menu-block-items {
-        font-size: 1em;
+        font-size: 0.9em;
         font-weight: bold;
     }
     
@@ -170,7 +170,7 @@
     }                
         
     .side-menu-item-wrapper-div {
-        height: 1.8em;
+        height: 1.5em;
         padding: 0.3em 0 0.3em 0;        
     }
     
@@ -184,13 +184,13 @@
     }
     
     .side-menu-item-icon img {
-        width: 1.5em;
-        height: 1.5em;
+        width: 1.2em;
+        height: 1.2em;
         padding: 0.1em 0 0 1em;
     }
     
     .side-menu-item-title {
-        padding: 0.4em 0 0 0.5em;
+        padding: 0.2em 0 0 0.5em;
         float: left;
     }
     
