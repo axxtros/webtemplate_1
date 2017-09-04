@@ -46,6 +46,7 @@ function initLoginForm() {
 }
 
 /*
+ * Globális függvény.
  * Háttérkép(ek) parallax animációja, ha kell akkor itt programozd le.
  * @returns {undefined}
  */
@@ -71,10 +72,9 @@ function initLoginForm() {
 function scrollToContent(anchorTag) {                   
     
     var browser = browserDetect();
-    if(browser !== 'firefox') {
-        event.preventDefault();     //azért, mert FF alatt ez nincs inicializálva és kezelve
-    }        
-    //event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
+    if(browser !== 'firefox') {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
+        event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
+    }            
     $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - page_header_height}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
     return false;
 }
