@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Lynxstudio - Template page</title>
+        <title>Lynxstudio - Online nyelvoktatás</title>
+        <meta name="description" content="Online nyelvoktatás angol, francia, német nyelven. Fordítás, szótár, hanganyag, levélírás, gyakorlatok.">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=noscript-template.html">
+        </noscript>
         <link rel="stylesheet" type="text/css" href="css/login/login-main.css">
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie-1.4.1.min.js"></script>
         <script type="text/javascript" src="js/login-page-controls.js"></script>
     </head>
     
@@ -59,7 +64,7 @@
                                 <img src="img/login-icons/user-icon.svg" alt="login-user-icon">
                             </div>
                             <div class="login-input-element-wrapper">
-                                <input type="text" maxlength="40" placeholder="Felhasználó név" title="A bejelentkezéshez kérem adja meg a felhasználói nevét." />
+                                <input id="login-text-input" type="text" maxlength="40" placeholder="Felhasználó név" title="A bejelentkezéshez kérem adja meg a felhasználói nevét." />
                             </div>
                         </div>
                     </div>
@@ -69,19 +74,19 @@
                                 <img src="img/login-icons/password-icon.svg" alt="login-user-icon">
                             </div>
                             <div class="login-input-element-wrapper">
-                                <input type="password" maxlength="40" placeholder="Jelszó" title="A bejelentkezéshez kérem adja meg a jelszavát."/>
+                                <input id="password-text-input" type="password" maxlength="40" placeholder="Jelszó" title="A bejelentkezéshez kérem adja meg a jelszavát."/>
                             </div>
                         </div>
                     </div>
                     <div class="login-input-wrapper-container">                            
                         <div class="login-button-wrapper">                                
-                            <input type="button" value="BELÉPÉS" />
+                            <input type="button" value="BELÉPÉS" onclick="loginTrigger();" />
                         </div>                            
                     </div>
                     <div class="login-input-wrapper-container">
                         <div class="login-input-wrapper login-addictional-content-wrapper">
                             <div class="login-remember-me-checkbox-wrapper">
-                                <input type="checkbox" value="remember-me" ><label>Emlékezz rám</label>
+                                <input id="remember-me-chckbox" type="checkbox" value="remember-me"><label>Emlékezz rám</label>
                             </div>
                             <div class="login-forget-password-link-wrapper">
                                 <a href="#">Elfelejtett jelszó</a>
@@ -95,10 +100,10 @@
                         <h1 class="page-title">Online nyelvtanfolyam és feladatok</h1>                        
                     </div>
                     <div class="page-sub-title-1-wrapper-div">
-                        <p class="page-sub-title-1">angol, francia, német, olasz</p>                        
+                        <h2 class="page-sub-title-1">angol, francia, német, olasz</h2>                        
                     </div>
                     <div class="page-sub-title-2-wrapper-div">
-                        <p class="page-sub-title-2">szótárazás, mondat fordítás, hanganyagok, szöveges feladatok, levélírás, online segítség</p>                        
+                        <h3 class="page-sub-title-2">szótárazás, mondat fordítás, hanganyagok, szöveges feladatok, levélírás, online segítség</h3>                        
                     </div>
                 </div>
                 

@@ -11,9 +11,38 @@ var parallax_image_y_2 = 300;       //ezek viszonyszámok, fontos, hogy mekkora 
 var parallax_bg_speed = 0.2;
 var page_header_height = 60;
 
+var cookie_expires_days = 365;
+var lynxstudio_username_cookie_name =  'LYNXSTUDIO_USERNAME';
+var lynxstudio_password_cookie_name =  'LYNXSTUDIO_PASSWORD';
+var lynxstudio_remcheckbox_cookie_name =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
+
 function initLoginPage() {
+    initParallaxBgImages();
+    initLoginForm();    
+}
+
+/**
+ * Beállítja, hogy az egyes parallax képek honnan kezdejenk el scrollozódni, a helyes - közép - megjelenítés érdekében.
+ * @returns {undefined}
+ */
+function initParallaxBgImages() {
     $('.first-parallax').css({'background-position-y':0 + 'px'});    
     $('.second-parallax').css({'background-position-y':parallax_image_y_2 + 'px'});
+}
+
+/**
+ * Kiolvassa a cookie-ból a felhasználó nevet, jelszót, és az emlékezz rám checkbox értékét, ha van, és kitölti az értékekkel a mezőket.
+ * @returns {undefined}
+ */
+function initLoginForm() {
+    //https://github.com/carhartl/jquery-cookie        
+    var username = $.cookie(lynxstudio_username_cookie_name);
+    var password = $.cookie(lynxstudio_password_cookie_name);
+    var remembermeCheckBox = $.cookie(lynxstudio_remcheckbox_cookie_name);
+    
+    username !== 'null' ? $("#login-text-input").val(username) : $("#login-text-input").val('');
+    password !== 'null' ? $("#password-text-input").val(password) : $("#password-text-input").val('');
+    remembermeCheckBox === "true" ? $("#remember-me-chckbox").prop('checked', true) : $("#remember-me-chckbox").prop('checked', false);    
 }
 
 /*
@@ -73,4 +102,23 @@ function browserDetect() {
         return 'opera';
     } else 
         return 'na';
+}
+
+function loginTrigger() {
+    rememberMeAction();
+}
+
+function rememberMeAction() { 
+    //https://github.com/carhartl/jquery-cookie
+    if ($('#remember-me-chckbox').prop('checked')) {
+        var username = $('#login-text-input').prop("value");
+        var password = $('#password-text-input').prop("value");
+        $.cookie(lynxstudio_username_cookie_name, username, { expires : cookie_expires_days });
+        $.cookie(lynxstudio_password_cookie_name, password, { expires : cookie_expires_days });
+        $.cookie(lynxstudio_remcheckbox_cookie_name, true, { expires : cookie_expires_days });
+    } else {
+        $.cookie(lynxstudio_username_cookie_name, null);
+        $.cookie(lynxstudio_password_cookie_name, null);
+        $.cookie(lynxstudio_remcheckbox_cookie_name, null);
+    }
 }

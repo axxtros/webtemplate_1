@@ -26,7 +26,7 @@
         font-weight: normal;
         line-height: 1em;
         letter-spacing: -0.4px;
-    }
+    }        
     
     .container {
         max-width: var(--body-width-g);
@@ -250,7 +250,8 @@
     
     .page-sub-title-2 {
         font-size: 1.4em;
-    }
+        font-weight: normal;
+    }        
     
     .first-parallax {
         height: 800px !important;
@@ -274,5 +275,3 @@
     }
     
 }
-
-

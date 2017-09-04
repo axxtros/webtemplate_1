@@ -9,3 +9,8 @@ https://job.lhsystems.hu/nyitooldal
 
 Feljövő szövegek animálva a képeken:
 http://themes.iamabdus.com/biznex/1.1/
+
+Remember me check box:
+http://devzone.co.in/remember-functionality-signinlogin-form-using-html5-jquery/
+https://opensourcezeal.wordpress.com/2014/07/31/remember-me-store-login-information-in-cookie-using-jquery/
+
