@@ -279,30 +279,33 @@
         display: none;
         background: #689cf3;
         bottom: 0em;
-        width: 99%;
-        padding: 2.5em;
+        width: 100%;
+        padding: 1em;
         z-index: 99999;        
     }
     
     .cookie-notification-warning-text {
         float: left;
         width: 60%;
-        color: white;        
+        color: white;
+        padding: 0.6em 0 0 0;
     }
     
     .cookie-notification-buttons {
         float: left;            
         width: 40%;
+        padding: 0.8em 0 0 0;
     }
     
     .cookie-notification-buttons input {
         width: 13em;
+        height: 4em;
         background: #689cf3;
         border: 1px solid white;
-        border-radius: 1em;
+        border-radius: 0.5em;
         color: white;
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 0.8em;
     }
     
     .cookie-notification-buttons input:hover {
