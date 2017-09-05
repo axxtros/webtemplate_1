@@ -4,6 +4,12 @@
     Lapvezérlő függvények.
 */
 
+var BROWSER_CHROME_NAME = 'Chrome';
+var BROWSER_IE_NAME = 'Microsoft Internet Explorer';
+var BROWSER_FIREFOX_NAME = 'Firefox';
+var BROWSER_OPERA_NAME = 'Opera';
+var BROWSER_SAFARI_NAME = 'Safari';
+
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
 var browserName  = navigator.appName;                       //a felhasználó által használt böngésző neve
@@ -35,36 +41,36 @@ function initLoginPage() {
 function initClientMetadatas() {    
     // In Opera 15+, the true version is after "OPR/" 
     if ((verOffset=nAgt.indexOf("OPR/"))!=-1) {
-        browserName = "Opera";
+        browserName = BROWSER_OPERA_NAME;
         fullVersion = nAgt.substring(verOffset+4);
     }
     // In older Opera, the true version is after "Opera" or after "Version"
     else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
-        browserName = "Opera";
+        browserName = BROWSER_OPERA_NAME;
         fullVersion = nAgt.substring(verOffset+6);
         if ((verOffset=nAgt.indexOf("Version"))!=-1) 
             fullVersion = nAgt.substring(verOffset+8);
     }
     // In MSIE, the true version is after "MSIE" in userAgent
     else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
-        browserName = "Microsoft Internet Explorer";
+        browserName = BROWSER_IE_NAME;
         fullVersion = nAgt.substring(verOffset+5);
     }
     // In Chrome, the true version is after "Chrome" 
     else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
-        browserName = "Chrome";
+        browserName = BROWSER_CHROME_NAME;
         fullVersion = nAgt.substring(verOffset+7);
     }
     // In Safari, the true version is after "Safari" or after "Version" 
     else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
-        browserName = "Safari";
+        browserName = BROWSER_SAFARI_NAME;
         fullVersion = nAgt.substring(verOffset+7);
         if ((verOffset=nAgt.indexOf("Version"))!=-1) 
             fullVersion = nAgt.substring(verOffset+8);
     }
     // In Firefox, the true version is after "Firefox" 
     else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
-        browserName = "Firefox";
+        browserName = BROWSER_FIREFOX_NAME;
         fullVersion = nAgt.substring(verOffset+8);
     }
     // In most other browsers, "name/version" is at the end of userAgent 
@@ -188,7 +194,7 @@ function userAgreeCoockieNotification() {
  * A parallax weboldalon a menüpont választás után az adott tartalomrészhez scrollozik animáltan.
  */
 function scrollToContent(anchorTag) {        
-    if(browserName !== 'Firefox') {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
+    if(browserName !== BROWSER_FIREFOX_NAME) {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
         event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
     }            
     $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - page_header_height}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
