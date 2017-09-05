@@ -14,7 +14,7 @@
     :root {        
         /* variables */
         --body-width-g: 1000px;        
-        --left-side-width-g: 25%;
+        --left-side-width-g: 25%;               /* oldalmenük lehetséges hosszai (karakter): főmenü 28, almenü-1: 26, almenü-2: 23 */
         --content-side-width-g: 75%;
 /*        --left-side-width-g: 20%;
         --content-side-width-g: 80%;*/
@@ -197,75 +197,47 @@
         float: left;
     }
     
-    .side-menu-item-submenu-1-wrapper-div {        
+    .side-menu-item-submenu-wrapper-div {        
         padding: 0em;
         display: none;
     }
     
-    .side-menu-item-submenu-1-wrapper-div ul {
+    .side-menu-item-submenu-wrapper-div ul {
         padding: 0em;
     }            
     
-    .side-menu-item-submenu-1-item-wrapper-div {
+    .side-menu-item-submenu-item-wrapper-div {
         /*height: 1.4em;*/
         height: 1.5em;
         padding: 0.1em 0 0.1em 0;
     }
     
-    .side-menu-item-submenu-1-item-wrapper-div:hover {
+    .side-menu-item-submenu-item-wrapper-div:hover {
         background-color: #656c7e;
         color: white;
     }
     
-    .side-menu-item-submenu-1-icon {
+    .side-menu-item-submenu-icon {
         float: left;
     }
     
-    .side-menu-item-submenu-1-icon img {
+    .side-menu-item-submenu-icon img {
         width: 1.1em;
         height: 1.1em;
         padding: 0.1em 0 0 2.3em;
     }
     
-    .side-menu-item-submenu-1-title {
+    .side-menu-item-submenu-title {
         float: left;
         padding: 0.2em 0 0 0.5em;
         font-size: 1em;
         font-weight: bold;
     }
     
-    .side-menu-item-submenu-2-wrapper-div {
-        padding: 0em;
-        display: none;
-    }
-    
-    .side-menu-item-submenu-2-item-wrapper-div {
-        /*height: 1.4em;*/
-        height: 1.5em;
-        padding: 0.1em 0 0.1em 0;
-    }
-    
-    .side-menu-item-submenu-2-item-wrapper-div:hover {
-        background-color: #656c7e;
-        color: white;
-    }
-    
-    .side-menu-item-submenu-2-icon {
-        float: left;
-    }
-    
-    .side-menu-item-submenu-2-icon img {
-        width: 1.1em;
-        height: 1.1em;
-        padding: 0.1em 0 0 4em;        
-    }
-    
-    .side-menu-item-submenu-2-title {
-        float: left;
-        padding: 0.2em 0 0 0.5em;
-        font-size: 1em;
-        font-weight: bold;
-    }
+    /* fontos, ezt hozzá kell adni a második szintű oldalós almenü style-hoz!!! */
+    .side-menu-item-submenu-2-icon img {    
+        padding: 0.1em 0 0 4em;
+    }    
     
     main {
         background-color: var(--main-bg-color);
