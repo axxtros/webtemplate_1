@@ -4,6 +4,9 @@
     Lapvezérlő függvények.
 */
 
+var SIDE_MENU_SUBMENU_ANIMATION_SPEED = 300;
+var BLOCK_TOGGLE_ANIMATION_SPEED = 500;
+
 function pageOnLoadEvent() {
     setMessageNotificationDiv();
 }
@@ -26,22 +29,21 @@ function setMessageNotificationDiv() {
 
 function openCloseSideMenuSubMenu(parentmenuitem) {
     if(parentmenuitem !== null) {
-        $(parentmenuitem).parent().next().slideToggle( "fast", function() {
+        $(parentmenuitem).parent().next().slideToggle( SIDE_MENU_SUBMENU_ANIMATION_SPEED, function() {
             var blockOpenCloseImage = $(parentmenuitem).children().children();            
             if ($(parentmenuitem).parent().next().is(':visible')) {
-                $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-open.svg');
-                selectedSideMenuItemIconChange(parentmenuitem);
+                $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-open.svg');            
             } else {
-                $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-close.svg');
-                selectedSideMenuItemIconChange(parentmenuitem);
+                $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg');
             }
+            selectedSideMenuItemIconChange(parentmenuitem);
         });
     }
 }
 
 function toggleContentPanel(contentblock) {        
     if(contentblock !== null) {        
-        $(contentblock).next().slideToggle( "fast", function() {
+        $(contentblock).next().slideToggle( BLOCK_TOGGLE_ANIMATION_SPEED, function() {
             var blockOpenCloseImage = $(contentblock).children().children();            
 //            console.log($(blockOpenCloseImage).attr('class'));
             if ($(contentblock).next().is(':visible')) {
