@@ -156,7 +156,9 @@ function initLoginForm() {
 function initCoockieNotificationBlock() {    
     var coockieNotificationDissmissed = $.cookie(lynxstudio_cookie_notification_cookie_name);
     if(typeof coockieNotificationDissmissed === 'undefined' || coockieNotificationDissmissed === 'no') {
-        $('.cookie-notification-base').css('display', 'block');
+        $('.cookie-notification-base').slideDown(1000, function() {
+            // Animation complete.
+        });
     }
 }
 
@@ -166,7 +168,9 @@ function initCoockieNotificationBlock() {
  */
 function userAgreeCoockieNotification() {
     $.cookie(lynxstudio_cookie_notification_cookie_name, 'yes', { expires : cookie_expires_days });
-    $('.cookie-notification-base').css('display', 'none');
+    $('.cookie-notification-base').slideUp(1000, function() {
+        // Animation complete.
+    });
 }
 
 /*

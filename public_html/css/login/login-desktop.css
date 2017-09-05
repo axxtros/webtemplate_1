@@ -75,6 +75,22 @@
         line-height: var(--header-width-g);
     }
     
+    .header-menu-item-div select {
+        margin-right: 3em;
+        font-weight: bold;
+        color: #2a2d33;
+        font-size: 1em;
+        height: 20px;
+        border: 1px solid white;
+    }
+    
+    .header-menu-item-div select option {
+        margin-right: 3em;
+        font-weight: bold;
+        color: #2a2d33;
+        font-size: 0.8em;
+    }        
+    
     .header-menu-item-div a {
         text-decoration: none;
         color: #2a2d33;
@@ -93,7 +109,7 @@
         z-index: 100;
         background: rgba(255, 255, 255, 0.4);
         float: right;
-        margin: 1em 0.6em 0 0;
+        margin: 4em 0.6em 0 0;
         border-radius: 25px;
     }
     
@@ -277,35 +293,49 @@
     .cookie-notification-base {
         position: fixed;
         display: none;
-        background: #689cf3;
+        background: #689cf3;        
         bottom: 0em;
         width: 100%;
         padding: 1em;
         z-index: 99999;        
     }
     
+    .cookie-notification-wrapper {
+        width: var(--body-width-g);
+        display: block;
+        margin: 0 auto;
+    }
+    
     .cookie-notification-warning-text {
-        float: left;
-        width: 60%;
+        float: left;        
         color: white;
-        padding: 0.6em 0 0 0;
+        padding: 0.6em 0 0 0;        
+        text-align: center;
     }
     
     .cookie-notification-buttons {
-        float: left;            
-        width: 40%;
-        padding: 0.8em 0 0 0;
+        width: 100%;
+        float: left;
+        padding: 1em 0 0 0;        
     }
     
-    .cookie-notification-buttons input {
+    .cookie-notification-buttons-wrapper {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cookie-notification-buttons-wrapper input {
         width: 13em;
-        height: 4em;
+        height: 3em;
         background: #689cf3;
         border: 1px solid white;
         border-radius: 0.5em;
         color: white;
         font-weight: bold;
         font-size: 0.8em;
+        margin: 1em;
     }
     
     .cookie-notification-buttons input:hover {
