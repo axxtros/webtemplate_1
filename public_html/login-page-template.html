@@ -80,7 +80,7 @@
                     </div>
                     <div class="login-input-wrapper-container">                            
                         <div class="login-button-wrapper">                                
-                            <input type="button" value="BELÉPÉS" onclick="loginTrigger();" />
+                            <input type="button" value="BELÉPÉS" onclick="loginAction();" />
                         </div>                            
                     </div>
                     <div class="login-input-wrapper-container">
@@ -173,6 +173,17 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>              
+            </div>
+        </div>
+        
+        <div class="cookie-notification-base">
+            <div class="cookie-notification-warning-text">
+                Mint minden weboldal, a lynxstudio.hu is használ cookie-kat, hogy kellemesebb felhasználói élményben legyen részed, amikor az oldalunkon jársz.<br/> 
+                Az <i><b>'Értem'</b></i> gomb lenyomásával hozzájárulásodat adod, hogy elfogadod őket. További tudnivalókat a cookie-król <b>Adatvédelmi szabályzat</b>unkban találsz.                            
+            </div>
+            <div class="cookie-notification-buttons">
+                <input type="button" value="Értem" onclick="userAgreeCoockieNotification();" />
+                <input type="button" value="Adatvédelmi szabályzat" />
             </div>
         </div>
         

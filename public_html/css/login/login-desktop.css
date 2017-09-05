@@ -271,7 +271,44 @@
     }
 
     .parallax-2 {
-        background-image: url("../../img/login/template/2.jpg");        
+        background-image: url("../../img/login/template/4.jpg");        
     }
     
+    .cookie-notification-base {
+        position: fixed;
+        display: none;
+        background: #689cf3;
+        bottom: 0em;
+        width: 99%;
+        padding: 2.5em;
+        z-index: 99999;        
+    }
+    
+    .cookie-notification-warning-text {
+        float: left;
+        width: 60%;
+        color: white;        
+    }
+    
+    .cookie-notification-buttons {
+        float: left;            
+        width: 40%;
+    }
+    
+    .cookie-notification-buttons input {
+        width: 13em;
+        background: #689cf3;
+        border: 1px solid white;
+        border-radius: 1em;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    .cookie-notification-buttons input:hover {
+        cursor: pointer;
+        background: #1768EF;
+/*        color: #2a2d33;
+        border: 2px solid #2a2d33;        */
+    }
 }

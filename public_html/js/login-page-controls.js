@@ -4,6 +4,13 @@
     Lapvezérlő függvények.
 */
 
+var nVer = navigator.appVersion;
+var nAgt = navigator.userAgent;
+var browserName  = navigator.appName;                       //a felhasználó által használt böngésző neve
+var fullVersion  = ''+parseFloat(navigator.appVersion);
+var majorVersion = parseInt(navigator.appVersion,10);
+var nameOffset, verOffset, ix;
+    
 var scrolled;
 var parallax_image_y_1 = 0;         //az első parallax kép mindig 0
 var parallax_image_y_2 = 300;       //ezek viszonyszámok, fontos, hogy mekkora tartalom van felettük, és ha változik az oldal nagysága, akkor ezeket a számokat utánuk kell állítani,
@@ -11,14 +18,104 @@ var parallax_image_y_2 = 300;       //ezek viszonyszámok, fontos, hogy mekkora 
 var parallax_bg_speed = 0.2;
 var page_header_height = 60;
 
-var cookie_expires_days = 365;
 var lynxstudio_username_cookie_name =  'LYNXSTUDIO_USERNAME';
 var lynxstudio_password_cookie_name =  'LYNXSTUDIO_PASSWORD';
 var lynxstudio_remcheckbox_cookie_name =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
+var lynxstudio_cookie_notification_cookie_name =  'LYNXSTUDIO_COOCKIE_NOTIFICATION_DISSMISSED';
+var cookie_expires_days = 365;
 
-function initLoginPage() {
+function initLoginPage() {    
+    initClientMetadatas();
     initParallaxBgImages();
-    initLoginForm();    
+    initLoginForm();
+    initCoockieNotificationBlock();
+    //console.log(navigator);         //kliens adatok lekérdezése (pl.: használt operációs rendszer, nyelv, stb.)
+}
+
+function initClientMetadatas() {    
+    // In Opera 15+, the true version is after "OPR/" 
+    if ((verOffset=nAgt.indexOf("OPR/"))!=-1) {
+        browserName = "Opera";
+        fullVersion = nAgt.substring(verOffset+4);
+    }
+    // In older Opera, the true version is after "Opera" or after "Version"
+    else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+        browserName = "Opera";
+        fullVersion = nAgt.substring(verOffset+6);
+        if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+            fullVersion = nAgt.substring(verOffset+8);
+    }
+    // In MSIE, the true version is after "MSIE" in userAgent
+    else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+        browserName = "Microsoft Internet Explorer";
+        fullVersion = nAgt.substring(verOffset+5);
+    }
+    // In Chrome, the true version is after "Chrome" 
+    else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+        browserName = "Chrome";
+        fullVersion = nAgt.substring(verOffset+7);
+    }
+    // In Safari, the true version is after "Safari" or after "Version" 
+    else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+        browserName = "Safari";
+        fullVersion = nAgt.substring(verOffset+7);
+        if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+            fullVersion = nAgt.substring(verOffset+8);
+    }
+    // In Firefox, the true version is after "Firefox" 
+    else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+        browserName = "Firefox";
+        fullVersion = nAgt.substring(verOffset+8);
+    }
+    // In most other browsers, "name/version" is at the end of userAgent 
+    else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) 
+    {
+        browserName = nAgt.substring(nameOffset,verOffset);
+        fullVersion = nAgt.substring(verOffset+1);
+        if (browserName.toLowerCase()==browserName.toUpperCase()) {
+            browserName = navigator.appName;
+        }
+    }
+    // trim the fullVersion string at semicolon/space if present
+    if ((ix=fullVersion.indexOf(";"))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+    if ((ix=fullVersion.indexOf(" "))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+
+    majorVersion = parseInt(''+fullVersion,10);
+    if (isNaN(majorVersion)) {
+        fullVersion  = ''+parseFloat(navigator.appVersion); 
+        majorVersion = parseInt(navigator.appVersion,10);
+    }
+}
+
+/**
+ * Nincs használva.
+ * @returns {String}
+ */
+function browserDetect() {
+    //https://stackoverflow.com/questions/38373340/how-to-get-browser-name-using-jquery-or-javascript
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    var isEdge = !isIE && !!window.StyleMedia;
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    
+    if(isChrome) {
+        return 'chrome';
+    } else if(isIE) {
+        return 'explorer';
+    } else if(isFirefox) {
+        return 'firefox';
+    } else if(isEdge) {
+        return 'edge';
+    } else if(isSafari) {
+        return 'safari';
+    } else if(isOpera) {
+        return 'opera';
+    } else 
+        return 'na';
 }
 
 /**
@@ -45,6 +142,27 @@ function initLoginForm() {
     remembermeCheckBox === "true" ? $("#remember-me-chckbox").prop('checked', true) : $("#remember-me-chckbox").prop('checked', false);    
 }
 
+/**
+ * Ha még nincs bent az oldaltól a 'lynxstudio_cookie_notification_cookie_name' cookie a böngészőtárban, akkor az EU-s adatvádelmi törvények miatt kötelezően feljön az oldal
+ * alján egy cookie figyelmeztető fix div.
+ * @returns {undefined}
+ */
+function initCoockieNotificationBlock() {    
+    var coockieNotificationDissmissed = $.cookie(lynxstudio_cookie_notification_cookie_name);
+    if(typeof coockieNotificationDissmissed === 'undefined' || coockieNotificationDissmissed === 'no') {
+        $('.cookie-notification-base').css('display', 'block');
+    }
+}
+
+/**
+ * Felhasználó elfogadta a coockie-kra vonatkozó használatot.
+ * @returns {undefined}
+ */
+function userAgreeCoockieNotification() {
+    $.cookie(lynxstudio_cookie_notification_cookie_name, 'yes', { expires : cookie_expires_days });
+    $('.cookie-notification-base').css('display', 'none');
+}
+
 /*
  * Globális függvény.
  * Háttérkép(ek) parallax animációja, ha kell akkor itt programozd le.
@@ -69,42 +187,15 @@ function initLoginForm() {
 /*
  * A parallax weboldalon a menüpont választás után az adott tartalomrészhez scrollozik animáltan.
  */
-function scrollToContent(anchorTag) {                   
-    
-    var browser = browserDetect();
-    if(browser !== 'firefox') {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
+function scrollToContent(anchorTag) {        
+    if(browserName !== 'Firefox') {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
         event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
     }            
     $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - page_header_height}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
     return false;
 }
 
-function browserDetect() {
-    //https://stackoverflow.com/questions/38373340/how-to-get-browser-name-using-jquery-or-javascript
-    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-    var isFirefox = typeof InstallTrigger !== 'undefined';
-    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-    var isIE = /*@cc_on!@*/false || !!document.documentMode;
-    var isEdge = !isIE && !!window.StyleMedia;
-    var isChrome = !!window.chrome && !!window.chrome.webstore;
-    
-    if(isChrome) {
-        return 'chrome';
-    } else if(isIE) {
-        return 'explorer';
-    } else if(isFirefox) {
-        return 'firefox';
-    } else if(isEdge) {
-        return 'edge';
-    } else if(isSafari) {
-        return 'safari';
-    } else if(isOpera) {
-        return 'opera';
-    } else 
-        return 'na';
-}
-
-function loginTrigger() {
+function loginAction() {
     rememberMeAction();
 }
 

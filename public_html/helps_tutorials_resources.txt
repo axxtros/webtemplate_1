@@ -14,3 +14,13 @@ Remember me check box:
 http://devzone.co.in/remember-functionality-signinlogin-form-using-html5-jquery/
 https://opensourcezeal.wordpress.com/2014/07/31/remember-me-store-login-information-in-cookie-using-jquery/
 
+Feladatok:
+    
+    - adatvédelmi nyilatkozat lapjának létrehozása, annak megírása, ellenőrzése
+    - seo optimalizálás
+    - footer létrehozása
+    - tartalmi blokkok számának és magasságának megadása
+        - bemutatkozás (regisztráció után milyen lehetőségek vannak, személyre szabott online nyelvtanulás, stb.)
+        - szolgáltatások
+        - díjak
+        - számít a véleménye blokk (ennek nincs a header-ben menüpontja)
