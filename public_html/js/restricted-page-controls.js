@@ -33,24 +33,11 @@ function openCloseSideMenuSubMenu(parentmenuitem) {
             var blockOpenCloseImage = $(parentmenuitem).children().children();            
             if ($(parentmenuitem).parent().next().is(':visible')) {
                 $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-open.svg');            
+                selectedSideMenuItemIconChange(parentmenuitem);
             } else {
                 $(blockOpenCloseImage).attr('src', 'img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg');
+                unSelectedSideMenuItemIconChange(parentmenuitem);
             }
-            selectedSideMenuItemIconChange(parentmenuitem);
-        });
-    }
-}
-
-function toggleContentPanel(contentblock) {        
-    if(contentblock !== null) {        
-        $(contentblock).next().slideToggle( BLOCK_TOGGLE_ANIMATION_SPEED, function() {
-            var blockOpenCloseImage = $(contentblock).children().children();            
-//            console.log($(blockOpenCloseImage).attr('class'));
-            if ($(contentblock).next().is(':visible')) {
-                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_open.svg');
-            } else {
-                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_close.svg');
-            }            
         });
     }
 }
@@ -79,3 +66,16 @@ function unSelectedSideMenuItemIconChange(menuitem) {
     }
 }
 
+function openCloseContentPanelBlock(contentblock) {        
+    if(contentblock !== null) {        
+        $(contentblock).next().slideToggle( BLOCK_TOGGLE_ANIMATION_SPEED, function() {
+            var blockOpenCloseImage = $(contentblock).children().children();            
+//            console.log($(blockOpenCloseImage).attr('class'));
+            if ($(contentblock).next().is(':visible')) {
+                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_open.svg');
+            } else {
+                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_close.svg');
+            }            
+        });
+    }
+}
