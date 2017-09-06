@@ -12,8 +12,8 @@
         
         --login-panel-width: 30em;
         --login-panel-height: 24em;
+        --login-panel-wrapper-width: 100%;
         --login-panel-wrapper-height: 4em;      // --login-panel-height/5
-        --login-panel-wrapper-width: 24em;        
     }
     
     body {
@@ -142,13 +142,13 @@
     .login-input-icon-wrapper {        
         float: left;
         width: 3em;
-        /*border-right: 1px solid black;*/
+        height: 100%;
     }
     
     .login-input-icon-wrapper img {
         width: 1.5em;
-        height: 1.5em;
-        padding: 0.3em 0 0 0.4em;
+        height: 1.6em;
+        padding: 0.2em 0 0 0.7em;
     }
     
     .login-input-element-wrapper {
@@ -167,8 +167,6 @@
     
     .login-input-element-wrapper input:focus {
         outline: none !important;
-        /*border:1px solid #2791c6;*/
-        box-shadow: 0 0 10px #719ECE;
     }
     
     .login-button-wrapper {
@@ -233,6 +231,19 @@
         box-shadow: 0 0 10px #719ECE;
     }
     
+    .login-input-error-msg-wrapper-container {
+        display: none;
+    }
+    
+    .login-input-error-msg-wrapper {        
+        background-color: #ed3d3d;
+        color: white;
+        text-align: center;
+        font-weight: normal;
+        font-size: 1em;
+        padding: 1em 0 0 0;
+    }
+    
     .page-title-base-div {
         z-index: 200;
         background: none;
@@ -268,6 +279,15 @@
         font-size: 1.4em;
         font-weight: normal;
     }        
+    
+    .content-container-h2 {
+        padding: 1em 0 1em 0;
+        font-size: 1.5em;
+    }
+    
+    .content-container-text-wrapper {
+        
+    }
     
     .first-parallax {
         height: 800px !important;

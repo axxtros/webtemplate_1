@@ -69,7 +69,11 @@
                                 <img src="img/login-icons/user-icon.svg" alt="login-user-icon">
                             </div>
                             <div class="login-input-element-wrapper">
-                                <input id="login-text-input" type="text" maxlength="40" placeholder="Felhasználó név" title="A bejelentkezéshez kérem adja meg a felhasználói nevét." />
+                                <input id="login-text-input" 
+                                       type="text" maxlength="40" placeholder="Felhasználó név" 
+                                       title="Adja meg a felhasználói nevét." 
+                                       onfocus="onFocusLoginInputEvent(this, true);"
+                                       onblur="onFocusLoginInputEvent(this, false);"/>
                             </div>
                         </div>
                     </div>
@@ -79,10 +83,19 @@
                                 <img src="img/login-icons/password-icon.svg" alt="login-user-icon">
                             </div>
                             <div class="login-input-element-wrapper">
-                                <input id="password-text-input" type="password" maxlength="40" placeholder="Jelszó" title="A bejelentkezéshez kérem adja meg a jelszavát."/>
+                                <input id="password-text-input" 
+                                       type="password" maxlength="40" placeholder="Jelszó" 
+                                       title="Adja meg a jelszavát." 
+                                       onfocus="onFocusLoginInputEvent(this, true);" 
+                                       onblur="onFocusLoginInputEvent(this, false);"/>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
+                    <div class="login-input-wrapper-container login-input-error-msg-wrapper-container">
+                        <div class="login-input-wrapper login-input-error-msg-wrapper">
+                            <label class="login-error-text">no error message</label>
+                        </div>
+                    </div>                    
                     <div class="login-input-wrapper-container">                            
                         <div class="login-button-wrapper">                                
                             <input type="button" value="BELÉPÉS" onclick="loginAction();" />
@@ -117,20 +130,16 @@
 
         <div id="introdaction-content">
             <div class="container">
-                <h2>Bemutatkozás</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>            
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>            
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>                           
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>            
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p><br/>                                         
+                <h2 class="content-container-h2">Bemutatkozás</h2>
+                <div class="content-container-text-wrapper">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...<br/>                    
+                </div>                
             </div>
         </div>
         

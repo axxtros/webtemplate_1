@@ -5,37 +5,69 @@
 */
 
 var BROWSER_CHROME_NAME = 'Chrome';
-var BROWSER_IE_NAME = 'Microsoft Internet Explorer';
 var BROWSER_FIREFOX_NAME = 'Firefox';
+var BROWSER_IE_NAME = 'Microsoft Internet Explorer';
 var BROWSER_OPERA_NAME = 'Opera';
 var BROWSER_SAFARI_NAME = 'Safari';
 
+//Parallax háttérképek scrollozás kezdetének beállítása.
+//Ezek viszonyszámok, fontos, hogy mekkora tartalom van felettük, és ha változik az oldal nagysága, akkor ezeket a számokat utánuk kell állítani.
+//Ezek az értékek állítják be, hogy a görgetett parallax képek középen legyenek a görgetési tartalom fókuszában (képernyő közepében).
+var PARALLAX_IMAGE_1_Y_STARTPOS = 0;         //az első parallax kép mindig 0
+var PARALLAX_IMAGE_2_Y_STARTPOS = 300;
+var PARALLAX_BG_SCROLL_SPEED = 0.2;
+
+var PAGE_HEADER_FIX_HEIGHT = 60;
+
+var LYNXSTUDIO_USERNAME_COOKIE_NAME =  'LYNXSTUDIO_USERNAME';
+var LYNXSTUDIO_PASSWORD_COOKIE_NAME =  'LYNXSTUDIO_PASSWORD';
+var LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
+var LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME =  'LYNXSTUDIO_COOCKIE_NOTIFICATION_DISSMISSED';
+var COOKIE_EXPIRES_DAYS = 365;
+
+var SELECTED_LOGIN_INPUT_IMG_COLOR = '#719ECE';
+var SELECTED_LOGIN_INPUT_COLOR = '#4a8bf5';
+var WRONG_LOGIN_COLOR = '#ed3d3d';
+
+var scrolled;
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
 var browserName  = navigator.appName;                       //a felhasználó által használt böngésző neve
 var fullVersion  = ''+parseFloat(navigator.appVersion);
 var majorVersion = parseInt(navigator.appVersion,10);
 var nameOffset, verOffset, ix;
-    
-var scrolled;
-var parallax_image_y_1 = 0;         //az első parallax kép mindig 0
-var parallax_image_y_2 = 300;       //ezek viszonyszámok, fontos, hogy mekkora tartalom van felettük, és ha változik az oldal nagysága, akkor ezeket a számokat utánuk kell állítani,
-                                    //annak érdekében, hogy a görgetett parallax képek 'nagyjából' középen legyenek a görgetési tartalom fókuszában (képernyő közepében)
-var parallax_bg_speed = 0.2;
-var page_header_height = 60;
 
-var lynxstudio_username_cookie_name =  'LYNXSTUDIO_USERNAME';
-var lynxstudio_password_cookie_name =  'LYNXSTUDIO_PASSWORD';
-var lynxstudio_remcheckbox_cookie_name =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
-var lynxstudio_cookie_notification_cookie_name =  'LYNXSTUDIO_COOCKIE_NOTIFICATION_DISSMISSED';
-var cookie_expires_days = 365;
-
-function initLoginPage() {    
+function initLoginPage() {
+    resetLoginForm();
     initClientMetadatas();
     initParallaxBgImages();
     initLoginForm();
     initCoockieNotificationBlock();
     //console.log(navigator);         //kliens adatok lekérdezése (pl.: használt operációs rendszer, nyelv, stb.)
+}
+
+/**
+ * Visszaállítja a bejelentkező form-ot az eredeti css állapotába.
+ * @returns {undefined}
+ */
+function resetLoginForm() {    
+    $('#login-text-input').css('box-shadow', 'none');
+    $('#login-text-input').parent().prev().css('background-color', 'transparent');
+    $('#login-text-input').parent().prev().css('box-shadow', 'none');
+    
+    $('#password-text-input').css('box-shadow', 'none');
+    $('#password-text-input').parent().prev().css('background-color', 'transparent');
+    $('#password-text-input').parent().prev().css('box-shadow', 'none');
+    
+    var loginPanelBaseDiv = $(".login-panel-base-div");
+    if(loginPanelBaseDiv !== null) {        
+        var loginErrorMessageBlock = $(".login-input-error-msg-wrapper-container");
+        if(loginErrorMessageBlock !== null) {
+            $(".login-error-text").text('no error message');
+            $(loginErrorMessageBlock).css('display', 'none');            
+        }
+        $(loginPanelBaseDiv).css('height', '24em');
+    }
 }
 
 function initClientMetadatas() {    
@@ -96,7 +128,7 @@ function initClientMetadatas() {
 }
 
 /**
- * Nincs használva.
+ * Nincs használva. (Ne töröld ki, lehet, hogy később kelleni fog!)
  * @returns {String}
  */
 function browserDetect() {
@@ -129,8 +161,8 @@ function browserDetect() {
  * @returns {undefined}
  */
 function initParallaxBgImages() {
-    $('.first-parallax').css({'background-position-y':0 + 'px'});    
-    $('.second-parallax').css({'background-position-y':parallax_image_y_2 + 'px'});
+    $('.first-parallax').css({'background-position-y':PARALLAX_IMAGE_1_Y_STARTPOS + 'px'});    
+    $('.second-parallax').css({'background-position-y':PARALLAX_IMAGE_2_Y_STARTPOS + 'px'});
 }
 
 /**
@@ -139,9 +171,9 @@ function initParallaxBgImages() {
  */
 function initLoginForm() {
     //https://github.com/carhartl/jquery-cookie        
-    var username = $.cookie(lynxstudio_username_cookie_name);
-    var password = $.cookie(lynxstudio_password_cookie_name);
-    var remembermeCheckBox = $.cookie(lynxstudio_remcheckbox_cookie_name);
+    var username = $.cookie(LYNXSTUDIO_USERNAME_COOKIE_NAME);
+    var password = $.cookie(LYNXSTUDIO_PASSWORD_COOKIE_NAME);
+    var remembermeCheckBox = $.cookie(LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME);
     
     username !== 'null' ? $("#login-text-input").val(username) : $("#login-text-input").val('');
     password !== 'null' ? $("#password-text-input").val(password) : $("#password-text-input").val('');
@@ -149,12 +181,12 @@ function initLoginForm() {
 }
 
 /**
- * Ha még nincs bent az oldaltól a 'lynxstudio_cookie_notification_cookie_name' cookie a böngészőtárban, akkor az EU-s adatvádelmi törvények miatt kötelezően feljön az oldal
+ * Ha még nincs bent az oldaltól a 'LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME' cookie a böngészőtárban, akkor az EU-s adatvádelmi törvények miatt kötelezően feljön az oldal
  * alján egy cookie figyelmeztető fix div.
  * @returns {undefined}
  */
 function initCoockieNotificationBlock() {    
-    var coockieNotificationDissmissed = $.cookie(lynxstudio_cookie_notification_cookie_name);
+    var coockieNotificationDissmissed = $.cookie(LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME);
     if(typeof coockieNotificationDissmissed === 'undefined' || coockieNotificationDissmissed === 'no') {
         $('.cookie-notification-base').slideDown(1000, function() {
             // Animation complete.
@@ -167,7 +199,7 @@ function initCoockieNotificationBlock() {
  * @returns {undefined}
  */
 function userAgreeCoockieNotification() {
-    $.cookie(lynxstudio_cookie_notification_cookie_name, 'yes', { expires : cookie_expires_days });
+    $.cookie(LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME, 'yes', { expires : COOKIE_EXPIRES_DAYS });
     $('.cookie-notification-base').slideUp(1000, function() {
         // Animation complete.
     });
@@ -186,11 +218,11 @@ function userAgreeCoockieNotification() {
         //ez az általános, amely mindegyik egyformán mozgatja
 //        $('.parallax').css('background-position-y', -(scrolled * 0.2) + 'px');      //a 0.2 egy viszonyszám, amelyet az éppen alkalmazott képekhez kell igazítani
 
-        var parallax_image_scroll_y_1 = parallax_image_y_1 - (scrolled * parallax_bg_speed);
+        var parallax_image_scroll_y_1 = PARALLAX_IMAGE_1_Y_STARTPOS - (scrolled * PARALLAX_BG_SCROLL_SPEED);
         $('.first-parallax').css('background-position-y', parallax_image_scroll_y_1 + 'px');
         
-        var parallax_image_scroll_y_2 = parallax_image_y_2 - (scrolled * parallax_bg_speed);
-        $('.second-parallax').css('background-position-y', parallax_image_scroll_y_2 + 'px');        
+        var parallax_image_scroll_y_2 = PARALLAX_IMAGE_2_Y_STARTPOS - (scrolled * PARALLAX_BG_SCROLL_SPEED);
+        $('.second-parallax').css('background-position-y', parallax_image_scroll_y_2 + 'px');
     };
 })();
 
@@ -201,25 +233,85 @@ function scrollToContent(anchorTag) {
     if(browserName !== BROWSER_FIREFOX_NAME) {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
         event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
     }            
-    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - page_header_height}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
+    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - PAGE_HEADER_FIX_HEIGHT}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
     return false;
 }
 
 function loginAction() {
-    rememberMeAction();
+    setRememberMeCookies();
+//    wrongLoginEvent('Hibás felhasználó név, vagy jelszó! Kérem adja meg újra!');
 }
 
-function rememberMeAction() { 
+/**
+ * Az 'Emlékezz rám' funkció cookie mentése.
+ * @returns {undefined}
+ */
+function setRememberMeCookies() {
     //https://github.com/carhartl/jquery-cookie
     if ($('#remember-me-chckbox').prop('checked')) {
         var username = $('#login-text-input').prop("value");
         var password = $('#password-text-input').prop("value");
-        $.cookie(lynxstudio_username_cookie_name, username, { expires : cookie_expires_days });
-        $.cookie(lynxstudio_password_cookie_name, password, { expires : cookie_expires_days });
-        $.cookie(lynxstudio_remcheckbox_cookie_name, true, { expires : cookie_expires_days });
+        $.cookie(LYNXSTUDIO_USERNAME_COOKIE_NAME, username, { expires : COOKIE_EXPIRES_DAYS });
+        $.cookie(LYNXSTUDIO_PASSWORD_COOKIE_NAME, password, { expires : COOKIE_EXPIRES_DAYS });
+        $.cookie(LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME, true, { expires : COOKIE_EXPIRES_DAYS });
     } else {
-        $.cookie(lynxstudio_username_cookie_name, null);
-        $.cookie(lynxstudio_password_cookie_name, null);
-        $.cookie(lynxstudio_remcheckbox_cookie_name, null);
+        $.cookie(LYNXSTUDIO_USERNAME_COOKIE_NAME, null);
+        $.cookie(LYNXSTUDIO_PASSWORD_COOKIE_NAME, null);
+        $.cookie(LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME, null);
+    }
+}
+
+/**
+ * Hibás bejelentkezés esetén ez az esemény fut le, felületi css változásokkal. Ezt a függvényt szerver oldalrról kell meghívni,
+ * ha a bejelentkezés validáció nem sikerül.
+ * @param {type} errorMessage A pontos hibaüzenet. [max. 50 karakter]
+ * @returns {undefined}
+ */
+function wrongLoginEvent(errorMessage) {    
+    var usernameIconWrapperElement = $("#login-text-input").parent().prev();        
+    var passwordIconWrapperElement = $("#password-text-input").parent().prev();        
+    if(usernameIconWrapperElement !== null && passwordIconWrapperElement !== null) {
+        
+        $(usernameIconWrapperElement).css('background-color', WRONG_LOGIN_COLOR);
+        $(usernameIconWrapperElement).css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
+        $("#login-text-input").css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
+        $(passwordIconWrapperElement).css('background-color', WRONG_LOGIN_COLOR);
+        $(passwordIconWrapperElement).css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
+        $("#password-text-input").css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
+        
+        var loginPanelBaseDiv = $(".login-panel-base-div");
+        if(loginPanelBaseDiv !== null) {
+            $(loginPanelBaseDiv).css('height', '26em');
+        }
+        
+        var loginErrorMessageBlock = $(".login-input-error-msg-wrapper-container");
+        if(loginErrorMessageBlock !== null) {
+            $(".login-error-text").text(errorMessage);
+            $(loginErrorMessageBlock).css('display', 'block');
+        }
+    }    
+}
+
+/**
+ * CSS vezérlés, ha a felhasználó belekattint a bejelentkező form valamelyik input mezőjébe.
+ * @param {type} inputElement
+ * @param {type} isSelected True, ha az input kiválasztásra került, false, ha elveszítette a focust.
+ * @returns {undefined}
+ */
+function onFocusLoginInputEvent(inputElement, isSelected) {    
+    resetLoginForm();
+    if(inputElement !== null) {
+        var inputIconWrapperElement = $(inputElement).parent().prev();
+        if(inputIconWrapperElement !== null) {
+            if(isSelected) {                                
+                $(inputElement).css('box-shadow', '0 0 10px' + SELECTED_LOGIN_INPUT_COLOR + '');
+                $(inputIconWrapperElement).css('background-color', SELECTED_LOGIN_INPUT_IMG_COLOR);
+                $(inputIconWrapperElement).css('box-shadow', '0 0 10px' + SELECTED_LOGIN_INPUT_IMG_COLOR + '');
+            } else {
+                $(inputElement).css('box-shadow', 'none');
+                $(inputIconWrapperElement).css('background-color', 'transparent');
+                $(inputIconWrapperElement).css('box-shadow', 'none');
+            }
+        }
     }
 }
