@@ -11,7 +11,7 @@
         --parallax-bg-image-height: 600px;
         
         --login-panel-width: 30em;
-        --login-panel-height: 24em;
+        --login-panel-height: 22.5em;           //javascript-ből van vezérelve, itt nincs hatása
         --login-panel-wrapper-width: 100%;
         --login-panel-wrapper-height: 4em;      // --login-panel-height/5
         

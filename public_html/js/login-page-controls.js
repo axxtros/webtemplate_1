@@ -68,7 +68,7 @@ function resetLoginForm() {
             $(".login-error-text").text('no error message');
             $(loginErrorMessageBlock).css('display', 'none');            
         }
-        $(loginPanelBaseDiv).css('height', '24em');
+        $(loginPanelBaseDiv).css('height', '22.5em');
     }
 }
 
@@ -245,7 +245,7 @@ function scrollToContent(anchorTag) {
 
 function loginAction() {
     setRememberMeCookies();
-//    wrongLoginEvent('Hibás felhasználó név, vagy jelszó! Kérem adja meg újra!');
+    wrongLoginEvent('Hibás felhasználó név, vagy jelszó! Kérem adja meg újra!');
 }
 
 /**
