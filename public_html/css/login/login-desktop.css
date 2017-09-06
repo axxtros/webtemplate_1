@@ -14,6 +14,8 @@
         --login-panel-height: 24em;
         --login-panel-wrapper-width: 100%;
         --login-panel-wrapper-height: 4em;      // --login-panel-height/5
+        
+        --footer-height: 10em;
     }
     
     body {
@@ -286,7 +288,68 @@
     }
     
     .content-container-text-wrapper {
-        
+        text-align: justify;
+        line-height: 1.4em;        
+        padding: 0 0 2em 0;
+    }
+    
+    .content-container-text-wrapper p {
+        text-indent: 1em;
+    }
+    
+    .footer-content {
+        width: 100%;
+        min-height: 10em;
+        overflow-y: auto;
+        background-color: #2a2d33;
+        color: white;
+        padding: 3em 0 3em 0;
+    }
+    
+    .footer-left-container-wrapper {
+        float: left;
+        width: 50%;
+        height: 100%;        
+    }
+    
+    .footer-right-container-wrapper {
+        float: left;
+        width: 50%;
+        height: 100%;        
+    }
+    
+    .footer-content-wrapper {
+        width: 100%;
+        height: 4em;
+    }
+    
+    .footer-icon-wrapper {
+        float: left;
+        width: 3em;
+        height: 3em;
+        padding: 0 0 0 1em;        
+    }
+    
+    .footer-text-wrapper {
+        float: left;
+        padding: 1em 0 0 1em;
+        font-weight: bold;
+    }
+    
+    .footer-text-email a {
+        text-decoration: none;
+        color: #4a8bf5;
+    }
+    
+    .contect-other-site {
+        float: right;
+    }
+    
+    .footer-copyright-version-wrapper {
+        clear: both;
+        width: 100%;
+        padding: 4em 0 0 0;
+        text-align: center;
     }
     
     .first-parallax {
@@ -307,7 +370,11 @@
     }
 
     .parallax-2 {
-        background-image: url("../../img/login/template/4.jpg");        
+        background-image: url("../../img/login/template/4.jpg");
+    }
+    
+    .parallax-3 {
+        background-image: url("../../img/login/template/7.jpg");
     }
     
     .cookie-notification-base {

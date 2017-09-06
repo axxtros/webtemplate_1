@@ -15,9 +15,11 @@ var BROWSER_SAFARI_NAME = 'Safari';
 //Ezek az értékek állítják be, hogy a görgetett parallax képek középen legyenek a görgetési tartalom fókuszában (képernyő közepében).
 var PARALLAX_IMAGE_1_Y_STARTPOS = 0;         //az első parallax kép mindig 0
 var PARALLAX_IMAGE_2_Y_STARTPOS = 300;
+var PARALLAX_IMAGE_3_Y_STARTPOS = 400;
 var PARALLAX_BG_SCROLL_SPEED = 0.2;
+var PARALLAX_SCROLL_TO_CONTENT_SPEED = 800;
 
-var PAGE_HEADER_FIX_HEIGHT = 60;
+var PAGE_HEADER_FIX_HEIGHT = 60;            //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
 
 var LYNXSTUDIO_USERNAME_COOKIE_NAME =  'LYNXSTUDIO_USERNAME';
 var LYNXSTUDIO_PASSWORD_COOKIE_NAME =  'LYNXSTUDIO_PASSWORD';
@@ -33,8 +35,8 @@ var scrolled;
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
 var browserName  = navigator.appName;                       //a felhasználó által használt böngésző neve
-var fullVersion  = ''+parseFloat(navigator.appVersion);
-var majorVersion = parseInt(navigator.appVersion,10);
+var fullVersion  = '' + parseFloat(navigator.appVersion);
+var majorVersion = parseInt(navigator.appVersion, 10);
 var nameOffset, verOffset, ix;
 
 function initLoginPage() {
@@ -163,6 +165,7 @@ function browserDetect() {
 function initParallaxBgImages() {
     $('.first-parallax').css({'background-position-y':PARALLAX_IMAGE_1_Y_STARTPOS + 'px'});    
     $('.second-parallax').css({'background-position-y':PARALLAX_IMAGE_2_Y_STARTPOS + 'px'});
+    $('.third-parallax').css({'background-position-y':PARALLAX_IMAGE_3_Y_STARTPOS + 'px'});
 }
 
 /**
@@ -223,6 +226,9 @@ function userAgreeCoockieNotification() {
         
         var parallax_image_scroll_y_2 = PARALLAX_IMAGE_2_Y_STARTPOS - (scrolled * PARALLAX_BG_SCROLL_SPEED);
         $('.second-parallax').css('background-position-y', parallax_image_scroll_y_2 + 'px');
+        
+        var parallax_image_scroll_y_3 = PARALLAX_IMAGE_3_Y_STARTPOS - (scrolled * PARALLAX_BG_SCROLL_SPEED);
+        $('.third-parallax').css('background-position-y', parallax_image_scroll_y_3 + 'px');
     };
 })();
 
@@ -233,7 +239,7 @@ function scrollToContent(anchorTag) {
     if(browserName !== BROWSER_FIREFOX_NAME) {             //azért, mert FF alatt az event nincs felinicializálva és kezelve, de ott nincs rá szükség
         event.preventDefault();             //ne hívódjon meg az anchor default esemény, a lap tetejére ugrás (FF alatt nincs automatikusan felinicializálva az event!!!)
     }            
-    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - PAGE_HEADER_FIX_HEIGHT}, 500);    //a 60 a felső fix menüsor height miatt kell bele, a body top padding-ja (css: --header-width-g)!
+    $('html, body').animate({scrollTop: $( $.attr(anchorTag, 'href') ).offset().top - PAGE_HEADER_FIX_HEIGHT}, PARALLAX_SCROLL_TO_CONTENT_SPEED);
     return false;
 }
 
