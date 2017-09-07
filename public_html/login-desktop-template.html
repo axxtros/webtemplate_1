@@ -13,8 +13,14 @@
         <script type="text/javascript" src="js/jquery.cookie-1.4.1.min.js"></script>
         <script type="text/javascript" src="js/login-page-controls.js"></script>
     </head>
-    
+        
     <body onload="initLoginPage();">
+        
+        <script type="text/javascript">
+            if (screen.width <= 1024) {
+                window.location = "login-mobile-template.html";
+            }
+        </script>
         
         <div class="header" >
             <div class="container">

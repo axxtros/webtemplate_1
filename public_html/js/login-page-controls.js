@@ -40,6 +40,7 @@ var majorVersion = parseInt(navigator.appVersion, 10);
 var nameOffset, verOffset, ix;
 
 function initLoginPage() {
+    console.log('nav: ' + navigator.userAgent);
     resetLoginForm();
     initClientMetadatas();
     initParallaxBgImages();

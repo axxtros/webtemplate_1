@@ -14,6 +14,15 @@ Remember me check box:
 http://devzone.co.in/remember-functionality-signinlogin-form-using-html5-jquery/
 https://opensourcezeal.wordpress.com/2014/07/31/remember-me-store-login-information-in-cookie-using-jquery/
 
+Weboldalak elkülönítése, mobil/desktop (magyar):
+http://thepitch.hu/mobil-seo-es-a-mobilbarat-weboldal/#Mitol-lesz-mobilbarat-egy-weboldal
+
+SEO optimalizálás (magyar):
+http://thepitch.hu/keresooptimalizalas/
+
+Eszközfelosztás képernyőméret szerint a css számára:
+https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile
+
 Feladatok:
     
     - adatvédelmi nyilatkozat lapjának létrehozása, annak megírása, ellenőrzése
