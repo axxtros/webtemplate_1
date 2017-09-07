@@ -382,6 +382,93 @@
         background-image: url("../../img/login/template/7.jpg");
     }
     
+    .forgot-password-base {
+        position: fixed;
+        display: none;
+        top: 0px;
+        left: 0px;        
+        z-index: 88888;
+        width: 600px;
+        height: 270px;
+        background-color: white;
+        border-radius: 20px;
+        -webkit-box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+        -moz-box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+        box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+    }
+    
+    .forgot-password-header-wrapper {
+        background-color: #4a8bf5;        
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    .forgot-password-header-wrapper label {
+        display: block;        
+        float: left;
+        color: white;
+        padding: 1em 0 0 1em;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    .forgot-password-header-wrapper img {
+        display: block;        
+        float: right;
+        padding: 0.6em 1em 0 0;
+        width: 2.5em;
+        height: 2.5em;
+    }        
+    
+    .forgot-password-input-wrapper {
+        height: 30px;
+        padding: 0.5em;
+    }
+    
+    .forgot-password-input-wrapper p {
+        text-align: justify;
+        font-size: 0.9em;
+    }
+    
+    .forgot-password-email-input-wrapper {
+        width: auto;
+        height: 30px;
+        padding: 0 2em 0.5em 1em;
+    }
+    
+    .forgot-password-email-input-icon-wrapper {
+        float: left;
+        width: 3em;        
+        height: 2em;
+        background-color: #719ECE;
+        box-shadow: 0 0 10px #4a8bf5;
+    }
+    
+    .forgot-password-email-input-icon-wrapper img {
+        padding: 0.2em 0 0 0.6em;
+    }
+    
+    .forgot-password-email-input-element-wrapper {
+        float: left;        
+    }
+    
+    .forgot-password-email-input-element-wrapper input {
+        width: 500px;
+        height: 2em;
+        border: none;
+        box-shadow: 0 0 10px #4a8bf5;
+        padding-left: 1em;
+    }
+    
+    .forgot-password-email-error-msg-wrapper {
+        height: 70px;
+    }
+    
+    .forgot-password-buttons-wrapper {
+        height: 70px;
+    }
+    
     .cookie-notification-base {
         position: fixed;
         display: none;

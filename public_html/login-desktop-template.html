@@ -14,13 +14,7 @@
         <script type="text/javascript" src="js/login-page-controls.js"></script>
     </head>
         
-    <body onload="initLoginPage();">
-        
-        <script type="text/javascript">
-            if (screen.width <= 1024) {
-                window.location = "login-mobile-template.html";
-            }
-        </script>
+    <body onload="initLoginPage();" onresize="pageResizeEvent();">
         
         <div class="header" >
             <div class="container">
@@ -113,7 +107,7 @@
                                 <input id="remember-me-chckbox" type="checkbox" value="remember-me"><label>Emlékezz rám</label>
                             </div>
                             <div class="login-forget-password-link-wrapper">
-                                <a href="#">Elfelejtett jelszó</a>
+                                <a href="#" onclick="forgetPasswordClickEvent();">Elfelejtett jelszó</a>
                             </div>                                
                         </div>
                     </div>
@@ -259,6 +253,37 @@
                 <div class="footer-copyright-version-wrapper">
                     © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
                 </div>
+            </div>
+        </div>
+        
+        <div class="forgot-password-base">
+            <div class="forgot-password-header-wrapper">
+                <label>Elfeljtett jelszó</label>
+                <a href="#" onclick="forgetPasswordDialogCloseEvent();">
+                    <img src="img/login-icons/password-forget-close-dialog-icon.svg" alt="close">                    
+                </a>
+            </div>
+            <div class="forgot-password-input-wrapper">
+                <p>
+                    Ha elfeljtetted a jelszavadat, akkor töltsd ki az Email cím mezőt, majd kattints a <b><i>Küldés</i></b> gombra.
+                    Ezután a megadott email címre kapni fogsz egy üzenetet, melyből megtudhatod a további teendőket.                    
+                </p>                
+            </div>
+            <div class="forgot-password-email-input-wrapper">
+                <div class="forgot-password-email-input-icon-wrapper">
+                    <img src="img/login-icons/email-icon.svg" alt="login-user-icon">
+                </div>
+                <div class="forgot-password-email-input-element-wrapper">
+                    <input id="forgot-password-email-text-input" 
+                           type="text" maxlength="60" placeholder="Email" 
+                           title="Itt add meg az email címedet." />
+                </div>
+            </div>                
+            <div class="forgot-password-email-error-msg-wrapper">
+                AAAAA
+            </div>
+            <div class="forgot-password-buttons-wrapper">
+                CCCC
             </div>
         </div>
         

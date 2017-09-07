@@ -39,8 +39,7 @@ var fullVersion  = '' + parseFloat(navigator.appVersion);
 var majorVersion = parseInt(navigator.appVersion, 10);
 var nameOffset, verOffset, ix;
 
-function initLoginPage() {
-    console.log('nav: ' + navigator.userAgent);
+function initLoginPage() {    
     resetLoginForm();
     initClientMetadatas();
     initParallaxBgImages();
@@ -198,6 +197,12 @@ function initCoockieNotificationBlock() {
     }
 }
 
+function pageResizeEvent() {
+    if($('.forgot-password-base').css('display') === 'block') {
+        forgetPasswordModalCalcPos();
+    }
+}
+
 /**
  * Felhasználó elfogadta a coockie-kra vonatkozó használatot.
  * @returns {undefined}
@@ -321,4 +326,26 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
             }
         }
     }
+}
+
+function forgetPasswordClickEvent() {
+    forgetPasswordModalCalcPos();
+    $('.forgot-password-base').css('display', 'block');
+}
+
+function forgetPasswordModalCalcPos() {
+    var forgetPasswordDiv = $('.forgot-password-base');
+    if(forgetPasswordDiv !== null) {
+        var bodyWidth = $('.container').width();
+        var bodyOffset = $('.container').offset().left;
+        var screenHeight = screen.height;
+        var forgetPasswordBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(forgetPasswordDiv).width() / 2));        
+        var forgetPasswordBaseTop = (screenHeight / 4);
+        $(forgetPasswordDiv).css('top', forgetPasswordBaseTop + 'px');
+        $(forgetPasswordDiv).css('left', forgetPasswordBaseLeft + 'px');
+    }
+}
+
+function forgetPasswordDialogCloseEvent() {
+    $('.forgot-password-base').css('display', 'none');
 }
