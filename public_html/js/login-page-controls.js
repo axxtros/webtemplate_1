@@ -330,9 +330,10 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
 }
 
 function forgetPasswordClickEvent() {
-    forgetPasswordModalCalcPos();
+    forgetPasswordModalCalcPos();    
     $("#forgot-password-email-text-input").val('');
     $('.forgot-password-base').css('display', 'block');
+    $("#forgot-password-email-text-input").focus();
 }
 
 function forgetPasswordModalCalcPos() {
