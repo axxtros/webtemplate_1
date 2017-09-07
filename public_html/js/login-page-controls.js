@@ -30,6 +30,7 @@ var COOKIE_EXPIRES_DAYS = 365;
 var SELECTED_LOGIN_INPUT_IMG_COLOR = '#719ECE';
 var SELECTED_LOGIN_INPUT_COLOR = '#4a8bf5';
 var WRONG_LOGIN_COLOR = '#ed3d3d';
+var SUCCESS_COLOR = '#249800';
 
 var scrolled;
 var nVer = navigator.appVersion;
@@ -330,12 +331,14 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
 
 function forgetPasswordClickEvent() {
     forgetPasswordModalCalcPos();
+    $("#forgot-password-email-text-input").val('');
     $('.forgot-password-base').css('display', 'block');
 }
 
 function forgetPasswordModalCalcPos() {
     var forgetPasswordDiv = $('.forgot-password-base');
     if(forgetPasswordDiv !== null) {
+        $(forgetPasswordDiv).css('height', '210px'); //240
         var bodyWidth = $('.container').width();
         var bodyOffset = $('.container').offset().left;
         var screenHeight = screen.height;
@@ -343,7 +346,26 @@ function forgetPasswordModalCalcPos() {
         var forgetPasswordBaseTop = (screenHeight / 4);
         $(forgetPasswordDiv).css('top', forgetPasswordBaseTop + 'px');
         $(forgetPasswordDiv).css('left', forgetPasswordBaseLeft + 'px');
+        $('.forgot-password-email-error-msg-wrapper').css('display', 'none');
     }
+}
+
+/**
+ * 
+ * @param {type} isSendSuccess True, ha a művelet siekresen volt. (Ekkor zöld hátterű üzenet jelenik meg.) False, ha a művelet sikertelen volt. (Ekkor piros hátterű üzenet jelenik meg.)
+ * @param {type} message A felhasználó tájékoztatására kiírandó üzenet.
+ * @returns {undefined}
+ */
+function forgetPasswordSendEmailAddress(isSendSuccess, message) {
+    var forgetPasswordDiv = $('.forgot-password-base');
+    $(forgetPasswordDiv).css('height', '240px');
+    if(isSendSuccess) {
+        $('.forgot-password-email-error-msg').css('background-color', SUCCESS_COLOR);        
+    } else {
+        $('.forgot-password-email-error-msg').css('background-color', WRONG_LOGIN_COLOR);
+    }
+    $(".forgot-password-email-error-msg").text(message);
+    $('.forgot-password-email-error-msg-wrapper').css('display', 'block');
 }
 
 function forgetPasswordDialogCloseEvent() {

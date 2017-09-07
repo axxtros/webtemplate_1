@@ -258,7 +258,7 @@
         
         <div class="forgot-password-base">
             <div class="forgot-password-header-wrapper">
-                <label>Elfeljtett jelszó</label>
+                <label>Elfelejtett jelszó</label>
                 <a href="#" onclick="forgetPasswordDialogCloseEvent();">
                     <img src="img/login-icons/password-forget-close-dialog-icon.svg" alt="close">                    
                 </a>
@@ -280,10 +280,17 @@
                 </div>
             </div>                
             <div class="forgot-password-email-error-msg-wrapper">
-                AAAAA
+                <div class="forgot-password-email-error-msg">
+                    No message.
+                </div>
             </div>
-            <div class="forgot-password-buttons-wrapper">
-                CCCC
+            <div class="forgot-password-buttons-wrapper">                
+                <div class="forgot-password-button-wrapper">                                
+                    <input type="button" value="KÜLDÉS" onclick="forgetPasswordSendEmailAddress(true, 'Az email sikeresen el lett küldve!')" />
+                </div>                
+                <div class="forgot-password-button-wrapper">                                
+                    <input type="button" value="MÉGSEM" onclick="forgetPasswordDialogCloseEvent();"/>
+                </div>                
             </div>
         </div>
         
