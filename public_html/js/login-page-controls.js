@@ -27,10 +27,10 @@ var LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
 var LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME =  'LYNXSTUDIO_COOCKIE_NOTIFICATION_DISSMISSED';
 var COOKIE_EXPIRES_DAYS = 365;
 
-var SELECTED_LOGIN_INPUT_IMG_COLOR = '#719ECE';
-var SELECTED_LOGIN_INPUT_COLOR = '#4a8bf5';
-var WRONG_LOGIN_COLOR = '#ed3d3d';
+var SELECTED_COLOR = '#4a8bf5';
+var SELECTED_INPUT_IMG_BG_COLOR = '#719ECE';
 var SUCCESS_COLOR = '#249800';
+var ERROR_COLOR = '#ed3d3d';
 
 var scrolled;
 var nVer = navigator.appVersion;
@@ -285,12 +285,12 @@ function wrongLoginEvent(errorMessage) {
     var passwordIconWrapperElement = $("#password-text-input").parent().prev();        
     if(usernameIconWrapperElement !== null && passwordIconWrapperElement !== null) {
         
-        $(usernameIconWrapperElement).css('background-color', WRONG_LOGIN_COLOR);
-        $(usernameIconWrapperElement).css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
-        $("#login-text-input").css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
-        $(passwordIconWrapperElement).css('background-color', WRONG_LOGIN_COLOR);
-        $(passwordIconWrapperElement).css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
-        $("#password-text-input").css('box-shadow', '0 0 10px' + WRONG_LOGIN_COLOR + '');
+        $(usernameIconWrapperElement).css('background-color', ERROR_COLOR);
+        $(usernameIconWrapperElement).css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
+        $("#login-text-input").css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
+        $(passwordIconWrapperElement).css('background-color', ERROR_COLOR);
+        $(passwordIconWrapperElement).css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
+        $("#password-text-input").css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
         
         var loginPanelBaseDiv = $(".login-panel-base-div");
         if(loginPanelBaseDiv !== null) {
@@ -317,9 +317,9 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
         var inputIconWrapperElement = $(inputElement).parent().prev();
         if(inputIconWrapperElement !== null) {
             if(isSelected) {                                
-                $(inputElement).css('box-shadow', '0 0 10px' + SELECTED_LOGIN_INPUT_COLOR + '');
-                $(inputIconWrapperElement).css('background-color', SELECTED_LOGIN_INPUT_IMG_COLOR);
-                $(inputIconWrapperElement).css('box-shadow', '0 0 10px' + SELECTED_LOGIN_INPUT_IMG_COLOR + '');
+                $(inputElement).css('box-shadow', '0 0 10px' + SELECTED_COLOR + '');
+                $(inputIconWrapperElement).css('background-color', SELECTED_INPUT_IMG_BG_COLOR);
+                $(inputIconWrapperElement).css('box-shadow', '0 0 10px' + SELECTED_INPUT_IMG_BG_COLOR + '');
             } else {
                 $(inputElement).css('box-shadow', 'none');
                 $(inputIconWrapperElement).css('background-color', 'transparent');
@@ -362,7 +362,7 @@ function forgetPasswordSendEmailAddress(isSendSuccess, message) {
     if(isSendSuccess) {
         $('.forgot-password-email-error-msg').css('background-color', SUCCESS_COLOR);        
     } else {
-        $('.forgot-password-email-error-msg').css('background-color', WRONG_LOGIN_COLOR);
+        $('.forgot-password-email-error-msg').css('background-color', ERROR_COLOR);
     }
     $(".forgot-password-email-error-msg").text(message);
     $('.forgot-password-email-error-msg-wrapper').css('display', 'block');
