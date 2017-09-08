@@ -371,15 +371,15 @@
     }    
     
     .parallax-1 {
-        background-image: url("../../img/login/template/1.jpg");        
+        background-image: url("../../img/login/1.jpg");        
     }
 
     .parallax-2 {
-        background-image: url("../../img/login/template/4.jpg");
+        background-image: url("../../img/login/4.jpg");
     }
     
     .parallax-3 {
-        background-image: url("../../img/login/template/7.jpg");
+        background-image: url("../../img/login/7.jpg");
     }
     
     .forgot-password-base {
@@ -499,6 +499,18 @@
         cursor: pointer;
         background-color: #689cf3;
         box-shadow: 0 0 10px #719ECE;
+    }
+    
+    .disabled-background-html-base {
+        position:fixed;
+        display: none;
+        top:0;
+        left:0;
+        background:#000;
+        opacity:0.4;
+        z-index:998;
+        height:100%;
+        width:100%;
     }
     
     .cookie-notification-base {

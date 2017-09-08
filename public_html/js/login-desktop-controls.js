@@ -7,6 +7,7 @@
 var BROWSER_CHROME_NAME = 'Chrome';
 var BROWSER_FIREFOX_NAME = 'Firefox';
 var BROWSER_IE_NAME = 'Microsoft Internet Explorer';
+var BROWSER_EDGE_NAME = 'Microsoft Edge';
 var BROWSER_OPERA_NAME = 'Opera';
 var BROWSER_SAFARI_NAME = 'Safari';
 
@@ -40,13 +41,18 @@ var fullVersion  = '' + parseFloat(navigator.appVersion);
 var majorVersion = parseInt(navigator.appVersion, 10);
 var nameOffset, verOffset, ix;
 
-function initLoginPage() {    
+function initLoginPage() {
+    init();
     resetLoginForm();
     initClientMetadatas();
     initParallaxBgImages();
     initLoginForm();
     initCoockieNotificationBlock();
     //console.log(navigator);         //kliens adatok lekérdezése (pl.: használt operációs rendszer, nyelv, stb.)
+}
+
+function init() {
+    $('.disabled-background-html-base').css('display', 'none');
 }
 
 /**
@@ -142,19 +148,19 @@ function browserDetect() {
     var isIE = /*@cc_on!@*/false || !!document.documentMode;
     var isEdge = !isIE && !!window.StyleMedia;
     var isChrome = !!window.chrome && !!window.chrome.webstore;
-    
+        
     if(isChrome) {
-        return 'chrome';
+        return BROWSER_CHROME_NAME;
     } else if(isIE) {
-        return 'explorer';
+        return BROWSER_IE_NAME;
     } else if(isFirefox) {
-        return 'firefox';
+        return BROWSER_FIREFOX_NAME;
     } else if(isEdge) {
-        return 'edge';
+        return BROWSER_EDGE_NAME;
     } else if(isSafari) {
-        return 'safari';
+        return BROWSER_SAFARI_NAME;
     } else if(isOpera) {
-        return 'opera';
+        return BROWSER_OPERA_NAME;
     } else 
         return 'na';
 }
@@ -330,6 +336,7 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
 }
 
 function forgetPasswordClickEvent() {
+    $('.disabled-background-html-base').css('display', 'block');
     forgetPasswordModalCalcPos();    
     $("#forgot-password-email-text-input").val('');
     $('.forgot-password-base').css('display', 'block');
@@ -371,4 +378,5 @@ function forgetPasswordSendEmailAddress(isSendSuccess, message) {
 
 function forgetPasswordDialogCloseEvent() {
     $('.forgot-password-base').css('display', 'none');
+    $('.disabled-background-html-base').css('display', 'none');
 }
