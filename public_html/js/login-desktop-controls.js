@@ -66,7 +66,7 @@ function resetLoginForm() {
     
     $('#password-text-input').css('box-shadow', 'none');
     $('#password-text-input').parent().prev().css('background-color', 'transparent');
-    $('#password-text-input').parent().prev().css('box-shadow', 'none');
+    $('#password-text-input').parent().prev().css('box-shadow', 'none');        
     
     var loginPanelBaseDiv = $(".login-panel-base-div");
     if(loginPanelBaseDiv !== null) {        
@@ -294,9 +294,10 @@ function wrongLoginEvent(errorMessage) {
         $(usernameIconWrapperElement).css('background-color', ERROR_COLOR);
         $(usernameIconWrapperElement).css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
         $("#login-text-input").css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
+        
         $(passwordIconWrapperElement).css('background-color', ERROR_COLOR);
         $(passwordIconWrapperElement).css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
-        $("#password-text-input").css('box-shadow', '0 0 10px' + ERROR_COLOR + '');
+        $("#password-text-input").css('box-shadow', '0 0 10px' + ERROR_COLOR + '');                
         
         var loginPanelBaseDiv = $(".login-panel-base-div");
         if(loginPanelBaseDiv !== null) {
