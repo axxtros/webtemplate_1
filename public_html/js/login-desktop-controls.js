@@ -28,6 +28,7 @@ var LYNXSTUDIO_REMCHECKBOX_COOKIE_NAME =  'LYNXSTUDIO_REMEMBER_CHCKBOX';
 var LYNXSTUDIO_COOKIE_NOTIFICATION_COOKIE_NAME =  'LYNXSTUDIO_COOCKIE_NOTIFICATION_DISSMISSED';
 var COOKIE_EXPIRES_DAYS = 365;
 
+var DEFAULT_COLOR = '#000000';
 var SELECTED_COLOR = '#4a8bf5';
 var SELECTED_INPUT_IMG_BG_COLOR = '#719ECE';
 var SUCCESS_COLOR = '#249800';
@@ -380,4 +381,61 @@ function forgetPasswordSendEmailAddress(isSendSuccess, message) {
 function forgetPasswordDialogCloseEvent() {
     $('.forgot-password-base').css('display', 'none');
     $('.disabled-background-html-base').css('display', 'none');
+}
+
+/**
+ * 
+ * @param {type} inputElement
+ * @param {type} isClicked
+ * @returns {undefined}
+ */
+function registrationFormInputFocusEvent(inputElement, isClicked) {
+    var registrationIconWrapper = $(inputElement).parent().prev();
+    var registrationInputWrapper = $(inputElement).parent();
+    if(isClicked) {        
+        $(registrationIconWrapper).css('background-color', SELECTED_INPUT_IMG_BG_COLOR);
+        $(registrationIconWrapper).css('box-shadow', '0 0 10px' + SELECTED_COLOR + '');    
+        $(registrationInputWrapper).css('box-shadow', '0 0 10px' + SELECTED_COLOR + '');    
+        $(registrationInputWrapper).css('border-top', 'none');
+        $(registrationInputWrapper).css('border-bottom', 'none');
+    } else {
+        $(registrationIconWrapper).css('background-color', 'transparent');
+        $(registrationIconWrapper).css('box-shadow', 'none');    
+        $(registrationInputWrapper).css('box-shadow', 'none');    
+        $(registrationInputWrapper).css('border-top', '1px solid #000000');
+        $(registrationInputWrapper).css('border-bottom', '1px solid #000000');
+    }
+    
+}
+
+/**
+ * Megjeleníti a felhasználó számára az adott mezőhöz tartozó segítséget.
+ * @param {type} registrationIconWrapper
+ * @param {type} isMouseover True, ha meg kell jeleníteni.
+ * @returns {undefined}
+ */
+function registrationHelpOnMouseEvent(registrationIconWrapper, isMouseover) {
+    var inputElement = $(registrationIconWrapper).prev().children();
+    if(isMouseover) {
+        var helpIconWrapperPosition = $(registrationIconWrapper).position();                
+        if($(inputElement).attr('id') === 'registration-username-input-id') {
+            var topPos = helpIconWrapperPosition.top - ($('#registration-username-help-id').height() / 2);
+            var leftPos = helpIconWrapperPosition.left - $('#registration-username-help-id').width() - 7;
+            $('#registration-username-help-id').css('top', topPos + 'px');
+            $('#registration-username-help-id').css('left', leftPos + 'px');
+            $('#registration-username-help-id').css('display', 'block');            
+        } else if($(inputElement).attr('id') === 'registration-password-input-id') {            
+            var topPos = helpIconWrapperPosition.top - ($('#registration-password-help-id').height() / 2);
+            var leftPos = helpIconWrapperPosition.left - $('#registration-password-help-id').width() - 7;
+            $('#registration-password-help-id').css('top', topPos + 'px');
+            $('#registration-password-help-id').css('left', leftPos + 'px');
+            $('#registration-password-help-id').css('display', 'block');            
+        }
+    } else {
+        if($(inputElement).attr('id') === 'registration-username-input-id') {
+            $('#registration-username-help-id').css('display', 'none');
+        } else if($(inputElement).attr('id') === 'registration-password-input-id') {
+            $('#registration-password-help-id').css('display', 'none');
+        }
+    }
 }

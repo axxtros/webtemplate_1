@@ -1,0 +1,126 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 14, 2017, 9:24:35 AM
+    Author     : fs
+*/
+
+@media (min-width: 1024px) {
+
+    .registration-content-wrapper-panel {
+        height: 800px;
+    }
+    
+    .registration-panel-base-div {
+        max-width: 80%;
+        margin: 2em auto 2em auto;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid #4a8bf5;
+        height: auto;
+        -webkit-box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+        -moz-box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+        box-shadow: 7px 3px 33px 0px rgba(61,61,61,1);
+    }
+    
+    .registration-header-wrapper {
+        background-color: #4a8bf5;        
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    .registration-header-wrapper label {
+        display: block;        
+        color: white;
+        padding: 1em 0 0 1em;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .registration-content-wrapper {
+        
+    }
+    
+    .registration-content-panel {
+        display: block;
+        padding: 0 0 1em 0;
+        margin: 1em;
+        height: 3em;
+        text-align: center;
+    }
+    
+    .registration-input-title-wrapper {
+        display: block;        
+        width: 100%;        
+        text-align: left;
+        padding: 0 0 0.5em 0;
+        font-weight: bold;
+    }
+    
+    .registration-input-with-icon-wrapper {
+        display: block;
+        width: 100%;
+        height: 80%;        
+    }
+    
+    .registration-wrapper {
+        display: block;
+        float: left;
+        height: 100%;        
+    }
+    
+    .registration-icon-wrapper {
+        display: block;
+        width: 5%;
+        height: 2.5em;
+    }
+    
+    .registration-wrapper img {
+        display: block;
+        width: 1.6em;
+        height: 1.6em;
+        padding: 0.4em 0 0 0.5em;
+    }
+    
+    .registration-input-wrapper {
+        display: block;
+        width: 89%;
+        height: 2.5em;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .registration-wrapper input {
+        display: block;
+        width: 98%;
+        height: 2em;        
+        margin: 0.3em 0 0 0;
+        padding: 0 0 0 0.5em;
+        border: none;
+    }
+    
+    .registration-wrapper input:focus {
+        outline: none;
+    }
+    
+    .help-base {
+        position: fixed;
+        display: none;
+        top: 0px;
+        left: 0px;        
+        z-index: 88888;
+        border: 1px solid #2a2d33;
+        background-color: #4a8bf5;        
+        font-size: 0.9em;
+        padding: 0.2em;        
+        color: white;
+        border-radius: 5px;
+        text-align: left;
+    }
+    
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lynxstudio - Online nyelvoktatás</title>
+        <meta name="description" content="Online nyelvoktatás angol, francia, német nyelven. Fordítás, szótár, hanganyag, levélírás, gyakorlatok.">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=noscript-desktop-template.html">
+        </noscript>
+        <link rel="stylesheet" type="text/css" href="css/login/login-main.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie-1.4.1.min.js"></script>
+        <script type="text/javascript" src="js/login-desktop-controls.js"></script>
+    </head>
+    <body>
+        
+        <div class="header" >
+            <div class="container">
+                <div class="header-logo-div">
+                    <a href="#top-element-div" onclick="scrollToContent(this);">
+                        <img src="img/lynxstudio-logo.png" alt="logo">                         
+                    </a>
+                </div>
+                <div class="header-menu-div">
+                    <div class="header-menu-wrapper-div">
+                        <div class="header-menu-item-div">
+                            <select>
+                                <option value="hu-HU">MAGYAR</option>
+                                <option value="en-EN">ANGOL</option>                                
+                            </select>                                
+                        </div>                        
+                        <div class="header-menu-item-div">
+                            <a href="login-desktop-template.html">
+                                VISSZA
+                            </a>
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="container registration-content-wrapper-panel">
+            <div class="registration-panel-base-div">
+                <div class="registration-header-wrapper">
+                    <label>Regisztráció</label>
+                </div>
+                <div class="registration-content-wrapper">
+                    <div class="registration-content-panel">
+                        Ahhoz, hogy be tudj lépni az oldalunkra, szükséges, hogy kitöltsd az alábbi űrlapot.<br/> 
+                        A *-al jelölt mezők kitöltése kötelező, az egyes mezők melletti információs ikonra kattintva pedig további segítséget találsz.
+                    </div>
+                    
+                    <div class="registration-content-panel">
+                        <div class="registration-input-title-wrapper">
+                            <label>Felhasználó név:</label>
+                        </div>
+                        <div class="registration-input-with-icon-wrapper">
+                            <div class="registration-wrapper registration-icon-wrapper">
+                                <img src="img/login-icons/user-icon.svg" alt="Felhasználó név">
+                            </div>
+                            <div class="registration-wrapper registration-input-wrapper">
+                                <input id="registration-username-input-id"
+                                       type="text" maxlength="60" placeholder="Felhasználói név" 
+                                       title="Itt add meg a felhasználói nevedet." 
+                                       onfocus="registrationFormInputFocusEvent(this, true);"
+                                       onblur="registrationFormInputFocusEvent(this, false);"/>
+                            </div>
+                            <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="registration-content-panel">
+                        <div class="registration-input-title-wrapper">
+                            <label>Jelszó:</label>
+                        </div>
+                        <div class="registration-input-with-icon-wrapper">
+                            <div class="registration-wrapper registration-icon-wrapper">
+                                <img src="img/login-icons/password-icon.svg" alt="Felhasználó név">
+                            </div>
+                            <div class="registration-wrapper registration-input-wrapper">
+                                <input id="registration-password-input-id"
+                                       type="password" maxlength="60" placeholder="Jelszó" 
+                                       title="Itt add meg a jelszavadat." 
+                                       onfocus="registrationFormInputFocusEvent(this, true);"
+                                       onblur="registrationFormInputFocusEvent(this, false);"/>
+                            </div>
+                            <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="registration-username-help-id" class="help-base">
+            Itt adhatod meg azt a felhasználói nevet, amelyel a későbbiekben be szeretnél lépni a rendszerbe.<br/>
+            A felhasználói névnek minimum 8 karakter hosszúnek kell lennie, és nem tartalmazhat szóközt!
+        </div>
+        <div id="registration-password-help-id" class="help-base">
+            Itt adhatod meg azt a jelszót, amelyel a későbbiekben be szeretnél lépni a rendszerbe.<br/>
+            A kis-, és nagybetük különböző karaktereknek számítanak a rendszerben.<br/><br/>
+            <i>A jelszó legyen minimum 14 karakter hosszú, tartalmazzon kis-, és nagybetüket, számokat,<br/>
+            valamit speciális karaktereket.</i>
+        </div>
+        
+        <div id="footer-content" class="footer-content">
+            <div class="container">
+                <div class="footer-left-container-wrapper">
+                    <div class="footer-content-wrapper">
+                        <div class="footer-icon-wrapper">
+                            <img src="img/login-icons/footer-message-icon.svg" alt="message-icon">
+                        </div>
+                        <div class="footer-text-wrapper footer-text-email">
+                            <a href="mailto:info@lynxstudio.hu?Subject=Lynxstudio információ" target="_top">info@lynxstudio.hu</a>
+                        </div>                        
+                    </div>
+                    <div class="footer-content-wrapper">
+                        <div class="footer-icon-wrapper">
+                            <img src="img/login-icons/footer-data-protection-icon.svg" alt="message-icon">
+                        </div>
+                        <div class="footer-text-wrapper footer-text-link">
+                            <a href="#" >Adatvédelmi szabályzat</a>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="footer-right-container-wrapper">
+                    <div class="footer-icon-wrapper contect-other-site">
+                        <a href="http://www.youtube.com">
+                            <img src="img/login-icons/footer-youtube-icon.svg" alt="message-icon" title="Youtube">
+                        </a>
+                    </div>
+                    <div class="footer-icon-wrapper contect-other-site">
+                        <a href="http://www.instagram.com">
+                            <img src="img/login-icons/footer-instagram-icon.svg" alt="message-icon" title="Instagram">
+                        </a>
+                    </div>
+                    <div class="footer-icon-wrapper contect-other-site">
+                        <a href="http://www.linkedin.com">
+                            <img src="img/login-icons/footer-linkedin-icon.svg" alt="message-icon" title="Linkedin">
+                        </a>
+                    </div>
+                    <div class="footer-icon-wrapper contect-other-site">
+                        <a href="http://www.twitter.com">
+                            <img src="img/login-icons/footer-twitter-icon.svg" alt="message-icon" title="Twitter">
+                        </a>
+                    </div>
+                    <div class="footer-icon-wrapper contect-other-site">
+                        <a href="http://www.facebook.com">
+                            <img src="img/login-icons/footer-facebook-icon.svg" alt="message-icon" title="Facebook">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-copyright-version-wrapper">
+                    © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
