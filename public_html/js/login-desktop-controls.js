@@ -459,11 +459,11 @@ function registrationHelpOnMouseEvent(helpIconWrapper, isMouseover) {
     if(isMouseover) {
         var helpIconWrapperPosition = $(helpIconWrapper).position();
         var topPos = helpIconWrapperPosition.top + PAGE_HEADER_FIX_HEIGHT;// - $(window).scrollTop();
-                
+
+        var bodyWidth = $('.container').width();
         var bodyOffset = $('.container').offset().left;
-//        var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));  
+        var leftPos = bodyOffset + ((bodyWidth / 2) - ($('.registration-panel').width() / 2)) + 16; //a 16 egy 'kissebb' beljebb tolás, viszonyszám
         
-        var leftPos = helpIconWrapperPosition.left - bodyOffset; // - 80;
         if($(inputElement).attr('id') === 'registration-username-input-id') {
             registrationVisibleHelpBlock('#registration-username-help-id', topPos, leftPos);
         } else if($(inputElement).attr('id') === 'registration-password-input-id') {                        
