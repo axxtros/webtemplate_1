@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : Sep 14, 2017, 9:24:35 AM
     Author     : fs
@@ -10,12 +5,20 @@ and open the template in the editor.
 
 @media (min-width: 1024px) {
 
+    .registration-panel {
+        position: fixed;
+        display: none;
+        top: 0px;
+        left: 0px;        
+        z-index: 11111;        
+    }
+    
     .registration-content-wrapper-panel {
         height: 800px;
     }
     
     .registration-panel-base-div {
-        max-width: 80%;
+        max-width: 100%;
         margin: 2em auto 2em auto;
         background-color: white;
         border-radius: 20px;
@@ -34,21 +37,29 @@ and open the template in the editor.
     }
     
     .registration-header-wrapper label {
-        display: block;        
+        display: block;
+        float: left;
         color: white;
         padding: 1em 0 0 1em;
         font-weight: bold;
-        font-size: 1.2em;
-        text-align: center;
+        font-size: 1.2em;        
     }
 
+    .registration-header-wrapper img {
+        display: block;        
+        float: right;
+        padding: 0.6em 1em 0 0;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    
     .registration-content-wrapper {
         
     }
     
     .registration-content-panel {
         display: block;
-        padding: 0 0 1em 0;
+        padding: 0 0 2em 0;
         margin: 1em;
         height: 3em;
         text-align: center;
@@ -78,6 +89,8 @@ and open the template in the editor.
         display: block;
         width: 5%;
         height: 2.5em;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
     }
     
     .registration-wrapper img {
@@ -113,14 +126,24 @@ and open the template in the editor.
         display: none;
         top: 0px;
         left: 0px;        
-        z-index: 88888;
+        z-index: 22222;
         border: 1px solid #2a2d33;
         background-color: #4a8bf5;        
         font-size: 0.9em;
         padding: 0.2em;        
         color: white;
         border-radius: 5px;
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
+        width: 50em;
+    }
+    
+    .highlight-text {
+        font-weight: bold;
+        font-size: 2em;
+        vertical-align: -webkit-baseline-middle;    /* chrome */
+        vertical-align: -moz-middle-with-baseline;  /* ff     */
+        color: #4a8bf5;
     }
     
 }

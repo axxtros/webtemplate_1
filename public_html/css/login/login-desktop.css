@@ -387,7 +387,7 @@
         display: none;
         top: 0px;
         left: 0px;        
-        z-index: 88888;
+        z-index: 11111;
         width: 600px;
         height: 250px;
         background-color: white;
@@ -446,7 +446,9 @@
     }
     
     .forgot-password-email-input-icon-wrapper img {
-        padding: 0.1em 0 0 0.6em;
+        padding: 0 0 0 0.4em;
+        width: 2em;
+        height: 2em;
     }
     
     .forgot-password-email-input-element-wrapper {

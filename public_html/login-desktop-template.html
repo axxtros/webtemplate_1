@@ -47,7 +47,7 @@
                             </a>
                         </div>
                         <div class="header-menu-item-div">
-                            <a href="registration-desktop-template.html">
+                            <a href="#" onclick="registrationDialogOpenEvent();">
                                 REGISZTRÁCIÓ
                             </a>
                         </div>                        
@@ -254,6 +254,129 @@
                     © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
                 </div>
             </div>
+        </div>
+        
+        <div class="registration-panel">            
+            <div class="container registration-content-wrapper-panel">
+                <div class="registration-panel-base-div">
+                    <div class="registration-header-wrapper">
+                        <label>Regisztráció</label>
+                        <a href="#" onclick="registrationDialogCloseEvent();">
+                            <img src="img/login-icons/password-forget-close-dialog-icon.svg" alt="close">                    
+                        </a>
+                    </div>
+                    <div class="registration-content-wrapper">
+                        <div class="registration-content-panel">
+                            Ahhoz, hogy be tudj lépni az oldalunkra, szükséges, hogy kitöltsd az alábbi űrlapot.<br/> 
+                            A <label class="highlight-text">*</label>-al jelölt mezők kitöltése kötelező, az egyes mezők melletti információs ikonra kattintva pedig további segítséget találsz.
+                        </div>
+
+                        <div class="registration-content-panel">
+                            <div class="registration-input-title-wrapper">
+                                <label>Felhasználó név</label> <label class="highlight-text">*</label>
+                            </div>
+                            <div class="registration-input-with-icon-wrapper">
+                                <div class="registration-wrapper registration-icon-wrapper">
+                                    <img src="img/login-icons/user-icon.svg" alt="Felhasználó név">
+                                </div>
+                                <div class="registration-wrapper registration-input-wrapper">
+                                    <input id="registration-username-input-id"
+                                           type="text" maxlength="60" placeholder="Felhasználói név" 
+                                           title="Itt add meg a felhasználói nevedet." 
+                                           onfocus="registrationFormInputFocusEvent(this, true);"
+                                           onblur="registrationFormInputFocusEvent(this, false);"/>
+                                </div>
+                                <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                    <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="registration-content-panel">
+                            <div class="registration-input-title-wrapper">
+                                <label>Jelszó</label> <label class="highlight-text">*</label>
+                            </div>
+                            <div class="registration-input-with-icon-wrapper">
+                                <div class="registration-wrapper registration-icon-wrapper">
+                                    <img src="img/login-icons/password-icon.svg" alt="Felhasználó név">
+                                </div>
+                                <div class="registration-wrapper registration-input-wrapper">
+                                    <input id="registration-password-input-id"
+                                           type="password" maxlength="60" placeholder="Jelszó" 
+                                           title="Itt add meg a jelszavadat." 
+                                           onfocus="registrationFormInputFocusEvent(this, true);"
+                                           onblur="registrationFormInputFocusEvent(this, false);"/>
+                                </div>
+                                <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                    <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="registration-content-panel">
+                            <div class="registration-input-title-wrapper">
+                                <label>Jelszó megerősítése</label> <label class="highlight-text">*</label>
+                            </div>
+                            <div class="registration-input-with-icon-wrapper">
+                                <div class="registration-wrapper registration-icon-wrapper">
+                                    <img src="img/login-icons/password-icon.svg" alt="Felhasználó név">
+                                </div>
+                                <div class="registration-wrapper registration-input-wrapper">
+                                    <input id="registration-password-confirm-input-id"
+                                           type="password" maxlength="60" placeholder="Jelszó megerősítése" 
+                                           title="Itt add meg újra a jelszavadat." 
+                                           onfocus="registrationFormInputFocusEvent(this, true);"
+                                           onblur="registrationFormInputFocusEvent(this, false);"/>
+                                </div>
+                                <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                    <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="registration-content-panel">
+                            <div class="registration-input-title-wrapper">
+                                <label>Email</label> <label class="highlight-text">*</label>
+                            </div>
+                            <div class="registration-input-with-icon-wrapper">
+                                <div class="registration-wrapper registration-icon-wrapper">
+                                    <img src="img/login-icons/email-icon.svg" alt="Email">
+                                </div>
+                                <div class="registration-wrapper registration-input-wrapper">
+                                    <input id="registration-email-input-id"
+                                           type="text" maxlength="60" placeholder="Email" 
+                                           title="Itt add meg az email címedet." 
+                                           onfocus="registrationFormInputFocusEvent(this, true);"
+                                           onblur="registrationFormInputFocusEvent(this, false);"/>
+                                </div>
+                                <div class="registration-wrapper registration-icon-wrapper" onmouseover="registrationHelpOnMouseEvent(this, true);" onmouseout="registrationHelpOnMouseEvent(this, false);">
+                                    <img src="img/login-icons/help-icon.svg" alt="Segítség">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="registration-username-help-id" class="help-base">
+            Itt adhatod meg azt a felhasználói nevet, amelyel a későbbiekben be szeretnél lépni a rendszerbe.<br/>
+            A felhasználói névnek minimum 6 karakter hosszúnek kell lennie, és nem tartalmazhat szóközt!
+        </div>
+        
+        <div id="registration-password-help-id" class="help-base">
+            Itt adhatod meg azt a jelszót, amelyel a későbbiekben be szeretnél lépni a rendszerbe.<br/>
+            A jelszónak minimum 8 karakternek kell lennie, továbbá a kis-, és nagybetük különböző karaktereknek számítanak!<br/>            
+        </div>
+        
+        <div id="registration-password-confirm-help-id" class="help-base">
+            Add meg újra a fent megadott jelszavadat.<br/>
+            A két jelszónak meg kell egyeznie!
+        </div>
+        
+        <div id="registration-email-help-id" class="help-base">
+            Add meg azt az email címedet, amelyet használsz, és ahová a rendszer értesítéseket küldhet.<br/>            
         </div>
         
         <div class="forgot-password-base">

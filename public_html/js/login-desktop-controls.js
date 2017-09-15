@@ -4,6 +4,8 @@
     Lapvezérlő függvények.
 */
 
+//javascript obfuscation and minification
+
 var BROWSER_CHROME_NAME = 'Chrome';
 var BROWSER_FIREFOX_NAME = 'Firefox';
 var BROWSER_IE_NAME = 'Microsoft Internet Explorer';
@@ -209,6 +211,9 @@ function pageResizeEvent() {
     if($('.forgot-password-base').css('display') === 'block') {
         forgetPasswordModalCalcPos();
     }
+    if($('.registration-panel').css('display') === 'block') {
+        registrationDialogCalcPos();        
+    }
 }
 
 /**
@@ -338,6 +343,9 @@ function onFocusLoginInputEvent(inputElement, isSelected) {
 }
 
 function forgetPasswordClickEvent() {
+    if(browserName !== BROWSER_FIREFOX_NAME) {
+        event.preventDefault();
+    }
     $('.disabled-background-html-base').css('display', 'block');
     forgetPasswordModalCalcPos();    
     $("#forgot-password-email-text-input").val('');
@@ -379,12 +387,32 @@ function forgetPasswordSendEmailAddress(isSendSuccess, message) {
 }
 
 function forgetPasswordDialogCloseEvent() {
+    if(browserName !== BROWSER_FIREFOX_NAME) {
+        event.preventDefault();
+    }
     $('.forgot-password-base').css('display', 'none');
     $('.disabled-background-html-base').css('display', 'none');
 }
 
+function registrationDialogOpenEvent() {
+    if(browserName !== BROWSER_FIREFOX_NAME) {
+        event.preventDefault();
+    }
+    $('.disabled-background-html-base').css('display', 'block');
+    registrationDialogCalcPos();
+    $('.registration-panel').css('display', 'block');
+}
+
+function registrationDialogCloseEvent() {
+    if(browserName !== BROWSER_FIREFOX_NAME) {
+        event.preventDefault();
+    }
+    $('.registration-panel').css('display', 'none');
+    $('.disabled-background-html-base').css('display', 'none');
+}
+
 /**
- * 
+ * A regisztrációs űrlapon vezélri a css változást, ha egy adott input fókuszba kerül.
  * @param {type} inputElement
  * @param {type} isClicked
  * @returns {undefined}
@@ -392,50 +420,91 @@ function forgetPasswordDialogCloseEvent() {
 function registrationFormInputFocusEvent(inputElement, isClicked) {
     var registrationIconWrapper = $(inputElement).parent().prev();
     var registrationInputWrapper = $(inputElement).parent();
+    var helpIconWrapper = $(inputElement).parent().next();
     if(isClicked) {        
         $(registrationIconWrapper).css('background-color', SELECTED_INPUT_IMG_BG_COLOR);
         $(registrationIconWrapper).css('box-shadow', '0 0 10px' + SELECTED_COLOR + '');    
+        $(registrationIconWrapper).css('border-top', 'none');
+        $(registrationIconWrapper).css('border-bottom', 'none');
+        
         $(registrationInputWrapper).css('box-shadow', '0 0 10px' + SELECTED_COLOR + '');    
         $(registrationInputWrapper).css('border-top', 'none');
         $(registrationInputWrapper).css('border-bottom', 'none');
+        
+        $(helpIconWrapper).css('border-top', 'none');
+        $(helpIconWrapper).css('border-bottom', 'none');
     } else {
         $(registrationIconWrapper).css('background-color', 'transparent');
-        $(registrationIconWrapper).css('box-shadow', 'none');    
+        $(registrationIconWrapper).css('box-shadow', 'none');
+        $(registrationIconWrapper).css('border-top', '1px solid #000000');
+        $(registrationIconWrapper).css('border-bottom', '1px solid #000000');
+        
         $(registrationInputWrapper).css('box-shadow', 'none');    
         $(registrationInputWrapper).css('border-top', '1px solid #000000');
         $(registrationInputWrapper).css('border-bottom', '1px solid #000000');
-    }
-    
+        
+        $(helpIconWrapper).css('border-top', '1px solid #000000');
+        $(helpIconWrapper).css('border-bottom', '1px solid #000000');
+    }    
 }
 
 /**
- * Megjeleníti a felhasználó számára az adott mezőhöz tartozó segítséget.
- * @param {type} registrationIconWrapper
- * @param {type} isMouseover True, ha meg kell jeleníteni.
+ * A regisztrációs űrlapon megjeleníti a felhasználó számára az adott mezőhöz tartozó segítséget/megjegyzést.
+ * @param {type} helpIconWrapper
+ * @param {type} isMouseover True, ha meg kell jeleníteni a segítséget tartalmazó blokkot.
  * @returns {undefined}
  */
-function registrationHelpOnMouseEvent(registrationIconWrapper, isMouseover) {
-    var inputElement = $(registrationIconWrapper).prev().children();
+function registrationHelpOnMouseEvent(helpIconWrapper, isMouseover) {
+    var inputElement = $(helpIconWrapper).prev().children();
     if(isMouseover) {
-        var helpIconWrapperPosition = $(registrationIconWrapper).position();                
+        var helpIconWrapperPosition = $(helpIconWrapper).position();
+        var topPos = helpIconWrapperPosition.top + PAGE_HEADER_FIX_HEIGHT;// - $(window).scrollTop();
+                
+        var bodyOffset = $('.container').offset().left;
+//        var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));  
+        
+        var leftPos = helpIconWrapperPosition.left - bodyOffset; // - 80;
         if($(inputElement).attr('id') === 'registration-username-input-id') {
-            var topPos = helpIconWrapperPosition.top - ($('#registration-username-help-id').height() / 2);
-            var leftPos = helpIconWrapperPosition.left - $('#registration-username-help-id').width() - 7;
-            $('#registration-username-help-id').css('top', topPos + 'px');
-            $('#registration-username-help-id').css('left', leftPos + 'px');
-            $('#registration-username-help-id').css('display', 'block');            
-        } else if($(inputElement).attr('id') === 'registration-password-input-id') {            
-            var topPos = helpIconWrapperPosition.top - ($('#registration-password-help-id').height() / 2);
-            var leftPos = helpIconWrapperPosition.left - $('#registration-password-help-id').width() - 7;
-            $('#registration-password-help-id').css('top', topPos + 'px');
-            $('#registration-password-help-id').css('left', leftPos + 'px');
-            $('#registration-password-help-id').css('display', 'block');            
+            registrationVisibleHelpBlock('#registration-username-help-id', topPos, leftPos);
+        } else if($(inputElement).attr('id') === 'registration-password-input-id') {                        
+            registrationVisibleHelpBlock('#registration-password-help-id', topPos, leftPos);            
+        } else if($(inputElement).attr('id') === 'registration-password-confirm-input-id') {                        
+            registrationVisibleHelpBlock('#registration-password-confirm-help-id', topPos, leftPos);
+        } else if($(inputElement).attr('id') === 'registration-email-input-id') {                       
+            registrationVisibleHelpBlock('#registration-email-help-id', topPos, leftPos);                        
         }
     } else {
         if($(inputElement).attr('id') === 'registration-username-input-id') {
-            $('#registration-username-help-id').css('display', 'none');
+            registrationHideHelpBlock('#registration-username-help-id');            
         } else if($(inputElement).attr('id') === 'registration-password-input-id') {
-            $('#registration-password-help-id').css('display', 'none');
+            registrationHideHelpBlock('#registration-password-help-id');
+        } else if($(inputElement).attr('id') === 'registration-password-confirm-input-id') {
+            registrationHideHelpBlock('#registration-password-confirm-help-id');            
+        } else if($(inputElement).attr('id') === 'registration-email-input-id') {
+            registrationHideHelpBlock('#registration-email-help-id');            
         }
+    }
+}
+
+function registrationVisibleHelpBlock(helpElement, topPos, leftPos) {
+    $(helpElement).css('top', topPos + 'px');
+    $(helpElement).css('left', leftPos + 'px');
+    $(helpElement).css('display', 'block'); 
+}
+
+function registrationHideHelpBlock(helpElement) {    
+    $(helpElement).css('display', 'none');
+}
+
+function registrationDialogCalcPos() {
+    var registrationPanelDiv = $('.registration-panel');
+    if(registrationPanelDiv !== null) {
+        var bodyWidth = $('.container').width();
+        var bodyOffset = $('.container').offset().left;
+//        var screenHeight = screen.height;
+        var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));        
+        var registrationPanelBaseTop = PAGE_HEADER_FIX_HEIGHT;
+        $(registrationPanelDiv).css('top', registrationPanelBaseTop + 'px');
+        $(registrationPanelDiv).css('left', registrationPanelBaseLeft + 'px');        
     }
 }
