@@ -502,9 +502,9 @@ function registrationDialogCalcPos() {
         var bodyWidth = $('.container').width();
         var bodyOffset = $('.container').offset().left;
 //        var screenHeight = screen.height;
-        var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));        
         var registrationPanelBaseTop = PAGE_HEADER_FIX_HEIGHT;
         $(registrationPanelDiv).css('top', registrationPanelBaseTop + 'px');
+        var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));        
         $(registrationPanelDiv).css('left', registrationPanelBaseLeft + 'px');        
     }
 }

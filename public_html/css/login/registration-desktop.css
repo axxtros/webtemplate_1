@@ -19,7 +19,7 @@
     
     .registration-panel-base-div {
         max-width: 100%;
-        margin: 2em auto 2em auto;
+        margin: 0 auto 0 auto;
         background-color: white;
         border-radius: 20px;
         border: 1px solid #4a8bf5;
@@ -63,6 +63,11 @@
         margin: 1em;
         height: 3em;
         text-align: center;
+    }
+    
+    .registration-intro-text-panel {
+        padding: 0;
+        margin-bottom: 0;
     }
     
     .registration-input-title-wrapper {
@@ -119,6 +124,39 @@
     
     .registration-wrapper input:focus {
         outline: none;
+    }
+    
+    .registration-message-panel {
+        padding: 0;
+        margin-bottom: 0;
+    }
+    
+    .registration-buttons-panel {        
+        margin-bottom: 0;
+        padding: 0;
+    }
+    
+    .registration-button-wrapper {
+        padding: 0 0 0 12em;
+    }
+    
+    .registration-button-wrapper input {
+        display: block;
+        float: left;
+        margin: 0 0 0 2em;        
+        width: 14em;
+        height: 3em;
+        background-color: #4a8bf5;
+        border-style: none;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+    
+    .registration-button-wrapper input:hover {
+        cursor: pointer;
+        background-color: #689cf3;
+        box-shadow: 0 0 10px #719ECE;
     }
     
     .help-base {
