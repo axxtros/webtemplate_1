@@ -400,6 +400,7 @@ function registrationDialogOpenEvent() {
     }
     $('.disabled-background-html-base').css('display', 'block');
     registrationDialogCalcPos();
+    $('.registration-message-panel').css('display', 'none');
     $('.registration-panel').css('display', 'block');
 }
 
@@ -507,4 +508,14 @@ function registrationDialogCalcPos() {
         var registrationPanelBaseLeft = bodyOffset + ((bodyWidth / 2) - ($(registrationPanelDiv).width() / 2));        
         $(registrationPanelDiv).css('left', registrationPanelBaseLeft + 'px');        
     }
+}
+
+function registrationSendEvent(isSuccess, message) {    
+    $('.registration-message-panel').css('display', 'block');
+    if(isSuccess) {
+        $('.registration-message-panel').css('background-color', SUCCESS_COLOR);        
+    } else {
+        $('.registration-message-panel').css('background-color', ERROR_COLOR);
+    }
+    $('.registration-message-wrapper').text(message);
 }
