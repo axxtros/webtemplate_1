@@ -144,7 +144,7 @@
     
     .registration-buttons-panel {        
         margin-bottom: 0;
-        padding: 0;
+        padding: 0 0 1em 0;
     }
     
     .registration-button-wrapper {
