@@ -74,7 +74,7 @@ function openCloseContentPanelBlock(contentblock) {
             if ($(contentblock).next().is(':visible')) {
                 $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_open.svg');
             } else {
-                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_close.svg');
+                $(blockOpenCloseImage).attr('src', 'img/restricted-content-block-icons/block_toggle_icon_fill_close.svg');
             }            
         });
     }

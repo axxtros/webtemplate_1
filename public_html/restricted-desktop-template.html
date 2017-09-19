@@ -10,394 +10,418 @@
     </head>
     <body onload="pageOnLoadEvent();" onresize="setMessageNotificationDiv();" onscroll="setMessageNotificationDiv();">
         
-        <header>
-            <div id="header-logo-div">
-                <a href="#" title="lynxstuio-logo">
-                    <img src="img/lynxstudio-logo.png" alt="logo">                    
-                </a>
-            </div>
-            <div id="header-right-div">
-                <div id="header-user-datas-div">                    
-                    <div id="header-user-profile-div">
-                        <div id="header-user-message-div">
-                            <a href="#" title="Unread notification">
-                                <img src="img/restricted-header-icons/user-message.png" alt="user-msg">
-                            </a>
-                            <div id="header-message-number-notification-div" style="display: block;">
-                                10
-                            </div>
-                        </div>                        
-                        <div id="header-user-name-div">                            
-                            <a href="#" title="Personal account" style="text-decoration: none; color: #000000;">
-                                Sthepanie Hawking                                                           
-                            </a>
-                            <div id="header-user-status-div">
-                                administrator
-                            </div>
-                        </div>                        
-                        <div id="header-user-pic-div">
-                            <a href="#" title="Personal account">
-                                <img src="img/templates/sthepanie.jpg" alt="user-pic">                                
-                            </a>
-                        </div>                        
-                    </div>
-                </div>                
-            </div>
-        </header>
-        
-        <nav>
-            #navigation<br/>
-        </nav>
-        
-        <div id="center-content-div">            
-            <aside>
-                                    
-                <div class="side-menu-block">
-                    <div class="side-menu-block-title">
-                        ANGOL
-                    </div>
-                    <div class="side-menu-block-items">
-                        <ul>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Szógyakorló
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                            
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Mondat fordítás
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                            
-                        </ul>
-                    </div>
+        <div class="body-base-wrapper">
+            
+            <header>
+                <div id="header-logo-div">
+                    <a href="#" title="lynxstuio-logo">
+                        <img src="img/lynxstudio-logo.png" alt="logo">                    
+                    </a>
                 </div>
-                
-                <div class="side-menu-block">
-                    <div class="side-menu-block-title">
-                        FRANCIA
-                    </div>
-                    <div class="side-menu-block-items">
-                        <ul>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Igeragozás
-                                        </div>
-                                    </div>
+                <div id="header-right-div">
+                    <div id="header-user-datas-div">                    
+                        <div id="header-user-profile-div">
+                            <div id="header-user-message-div">
+                                <a href="#" title="Unread notification">
+                                    <img src="img/restricted-header-icons/user-message.png" alt="user-msg">
                                 </a>
-                            </li>                            
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Főmenü 1
-                                        </div>
-                                    </div>
+                                <div id="header-message-number-notification-div" style="display: block;">
+                                    10
+                                </div>
+                            </div>                        
+                            <div id="header-user-name-div">                            
+                                <a href="#" title="Personal account" style="text-decoration: none; color: #000000;">
+                                    Sthepanie Hawking                                                           
                                 </a>
-                                <div class="side-menu-item-submenu-wrapper-div">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
-                                                    <div class="side-menu-item-submenu-icon">
-                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
-                                                    </div>
-                                                    <div class="side-menu-item-submenu-title">
-                                                        Almenü szint 1 #1
-                                                    </div>                                                        
-                                                </div>
-                                            </a>
-                                            <div class="side-menu-item-submenu-wrapper-div">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
-                                                                <div class="side-menu-item-submenu-icon side-menu-item-submenu-2-icon">
-                                                                    <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                                                </div>
-                                                                <div class="side-menu-item-submenu-title">
-                                                                    Almenü szint 2 #1
-                                                                </div>                                                        
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
-                                                                <div class="side-menu-item-submenu-icon side-menu-item-submenu-2-icon">
-                                                                    <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                                                </div>
-                                                                <div class="side-menu-item-submenu-title">
-                                                                    Almenü szint 2 #2
-                                                                </div>                                                        
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                <div id="header-user-status-div">
+                                    administrator
+                                </div>
+                            </div>                        
+                            <div id="header-user-pic-div">
+                                <a href="#" title="Personal account">
+                                    <img src="img/templates/sthepanie.jpg" alt="user-pic">                                
+                                </a>
+                            </div>                        
+                        </div>
+                    </div>                
+                </div>
+            </header>
+
+            <nav>
+                #navigation<br/>
+            </nav>
+
+            <div id="center-content-div">            
+                <aside>
+
+                    <div class="side-menu-block">
+                        <div class="side-menu-block-title">
+                            ANGOL
+                        </div>
+                        <div class="side-menu-block-items">
+                            <ul>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
                                             </div>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                                    <div class="side-menu-item-submenu-icon">
-                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                            <div class="side-menu-item-title">
+                                                Szógyakorló
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                            
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Mondat fordítás
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="side-menu-block">
+                        <div class="side-menu-block-title">
+                            FRANCIA
+                        </div>
+                        <div class="side-menu-block-items">
+                            <ul>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Igeragozás
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                            
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Főmenü 1
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="side-menu-item-submenu-wrapper-div">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
+                                                        <div class="side-menu-item-submenu-icon">
+                                                            <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
+                                                        </div>
+                                                        <div class="side-menu-item-submenu-title">
+                                                            Almenü szint 1 #1
+                                                        </div>                                                        
                                                     </div>
-                                                    <div class="side-menu-item-submenu-title">
-                                                        Almenü szint 1 #2
-                                                    </div>                                                        
+                                                </a>
+                                                <div class="side-menu-item-submenu-wrapper-div">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
+                                                                    <div class="side-menu-item-submenu-icon side-menu-item-submenu-2-icon">
+                                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                                    </div>
+                                                                    <div class="side-menu-item-submenu-title">
+                                                                        Almenü szint 2 #1
+                                                                    </div>                                                        
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
+                                                                    <div class="side-menu-item-submenu-icon side-menu-item-submenu-2-icon">
+                                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                                    </div>
+                                                                    <div class="side-menu-item-submenu-title">
+                                                                        Almenü szint 2 #2
+                                                                    </div>                                                        
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                            </a>
-                                        </li>
-                                    </ul>                                    
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                                        <div class="side-menu-item-submenu-icon">
+                                                            <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                        </div>
+                                                        <div class="side-menu-item-submenu-title">
+                                                            Almenü szint 1 #2
+                                                        </div>                                                        
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>                                    
+                                    </div>
+                                </li>                            
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Főmenü 2
+                                            </div>
+                                        </div>
+                                    </a>                                
+                                    <div class="side-menu-item-submenu-wrapper-div">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
+                                                        <div class="side-menu-item-submenu-icon">
+                                                            <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                        </div>
+                                                        <div class="side-menu-item-submenu-title">
+                                                            Almenü szint 1 #1
+                                                        </div>                                                        
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                                        <div class="side-menu-item-submenu-icon">
+                                                            <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                                        </div>
+                                                        <div class="side-menu-item-submenu-title">
+                                                            Almenü szint 1 #2
+                                                        </div>                                                        
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>                                    
+                                    </div>
+                                </li>                            
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Kiejtés gyakorlat
+                                            </div>
+                                        </div>
+                                    </a>                                
+                                </li>                            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="side-menu-block">
+                        <div class="side-menu-block-title">
+                            ADMINISZTRÁCIÓ
+                        </div>
+                        <div class="side-menu-block-items">
+                            <ul>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/settings-icon.svg" alt="Schedule menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Tartalom menedzsment
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                            
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/users-icon.svg" alt="Documents menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Üzemeltetés
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="side-menu-block">
+                        <div class="side-menu-block-title">
+                            SZEMÉLYES
+                        </div>
+                        <div class="side-menu-block-items">
+                            <ul>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Adatlap
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/phone-icon.svg" alt="Schedule menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Üzenet küldés
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                                                        
+                                <li>
+                                    <a href="#">
+                                        <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
+                                            <div class="side-menu-item-icon">
+                                                <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/logout-icon.svg" alt="Schedule menu">
+                                            </div>
+                                            <div class="side-menu-item-title">
+                                                Kijelentkezés
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <main>
+                    <div id="main-content-div">
+
+                        <div class="content-block-div">
+                            <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
+                                <div class="block-openclose-icon-div">
+                                    <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
                                 </div>
-                            </li>                            
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Főmenü 2
-                                        </div>
-                                    </div>
-                                </a>                                
-                                <div class="side-menu-item-submenu-wrapper-div">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);">
-                                                    <div class="side-menu-item-submenu-icon">
-                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                                    </div>
-                                                    <div class="side-menu-item-submenu-title">
-                                                        Almenü szint 1 #1
-                                                    </div>                                                        
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                                    <div class="side-menu-item-submenu-icon">
-                                                        <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                                    </div>
-                                                    <div class="side-menu-item-submenu-title">
-                                                        Almenü szint 1 #2
-                                                    </div>                                                        
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>                                    
+                                <div class="block-title-text-div">
+                                    Angol / Szógyakorlás
                                 </div>
-                            </li>                            
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Documents menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Kiejtés gyakorlat
-                                        </div>
-                                    </div>
-                                </a>                                
-                            </li>                            
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="side-menu-block">
-                    <div class="side-menu-block-title">
-                        ADMINISZTRÁCIÓ
-                    </div>
-                    <div class="side-menu-block-items">
-                        <ul>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/settings-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Tartalom menedzsment
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                            
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/users-icon.svg" alt="Documents menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Üzemeltetés
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                            
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="side-menu-block">
-                    <div class="side-menu-block-title">
-                        SZEMÉLYES
-                    </div>
-                    <div class="side-menu-block-items">
-                        <ul>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/document-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Adatlap
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/phone-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Üzenet küldés
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>                                                        
-                            <li>
-                                <a href="#">
-                                    <div class="side-menu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this)">
-                                        <div class="side-menu-item-icon">
-                                            <img class="side-menu-item-icon-img" src="img/restricted-sidemenu-icons/logout-icon.svg" alt="Schedule menu">
-                                        </div>
-                                        <div class="side-menu-item-title">
-                                            Kijelentkezés
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </aside>
-
-            <main>
-                <div id="main-content-div">
-
-                    <div class="content-block-div">
-                        <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
-                            <div class="block-openclose-icon-div">
-                                <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
                             </div>
-                            <div class="block-title-text-div">
-                                Angol / Szógyakorlás
-                            </div>
+                            <div class="block-content-div" style="display: block;">
+                                <div class="block-content-header">
+                                    <input class="form-button form-tblue-button form-header-button" type="button" value="Turkise button" />
+                                    <input class="form-button form-orange-button form-header-button" type="button" value="Orange button" />                                
+                                    <input class="form-button form-blue-button form-header-button" type="button" value="Blue button" />
+                                    <input class="form-button form-green-button form-header-button" type="button" value="Green button" />
+                                    <input class="form-button form-yellow-button form-header-button" type="button" value="Yellow button" />
+                                </div>                            
+                                <div class="block-content-main">
+                                    #form content with button on header and footer<br/>
+                                    #form content with button on header and footer<br/>
+                                    #form content with button on header and footer<br/>
+                                    #form content with button on header and footer<br/>
+                                    #form content with button on header and footer<br/>
+                                    #form content with button on header and footer<br/>                                
+                                    #form content with button on header and footer<br/>                                
+                                    #form content with button on header and footer<br/>                                
+                                </div>                            
+                                <div class="block-content-footer">
+                                    <input class="form-button form-tblue-button form-footer-button" type="button" value="Turkise button" />
+                                    <input class="form-button form-orange-button form-footer-button" type="button" value="Orange button" />                                
+                                    <input class="form-button form-blue-button form-footer-button" type="button" value="Blue button" />
+                                    <input class="form-button form-green-button form-footer-button" type="button" value="Green button" />
+                                    <input class="form-button form-yellow-button form-footer-button" type="button" value="Yellow button" />
+                                </div>
+                            </div>                    
                         </div>
-                        <div class="block-content-div" style="display: block;">
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>                   
-                            #conent<br/>
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                            #conent<br/>                   
-                        </div>                    
-                    </div>
 
-                    <div class="content-block-div">
-                        <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
-                            <div class="block-openclose-icon-div">
-                                <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
+                        <div class="content-block-div">
+                            <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
+                                <div class="block-openclose-icon-div">
+                                    <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
+                                </div>
+                                <div class="block-title-text-div">
+                                    Beállítások
+                                </div>
                             </div>
-                            <div class="block-title-text-div">
-                                Beállítások
-                            </div>
+                            <div class="block-content-div" style="display: block;">
+                                <div class="block-content-header">
+                                    <div class="form-description-text">
+                                        #form header help text...<br/>
+                                        <!--#form header help text...<br/>-->
+                                    </div>
+                                </div>                            
+                                <div class="block-content-main">
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                    #form content with help text on header and footer<br/>                               
+                                </div>                            
+                                <div class="block-content-footer">
+                                    <div class="form-description-text">
+                                        #form footer multi-line help text...<br/>
+                                        #form footer multi-line help text...<br/>                                        
+                                    </div>
+                                </div>                            
+                            </div>                    
                         </div>
-                        <div class="block-content-div" style="display: block;">
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>                   
-                            #conent<br/>
-                            #conent<br/>                   
-                        </div>                    
-                    </div>
 
-                    <div class="content-block-div">
-                        <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
-                            <div class="block-openclose-icon-div">
-                                <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
+                        <div class="content-block-div">
+                            <div class="block-title-div" onclick="openCloseContentPanelBlock(this);">
+                                <div class="block-openclose-icon-div">
+                                    <img src="img/restricted-content-block-icons/block_toggle_icon_open.svg" alt="Close block">
+                                </div>
+                                <div class="block-title-text-div">
+                                    Segítség
+                                </div>
                             </div>
-                            <div class="block-title-text-div">
-                                Segítség
-                            </div>
+                            <div class="block-content-div" style="display: block;">                            
+                                <div class="block-content-main">
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                    #no form header and no form footer, only form content<br/>                                
+                                </div>                                                        
+                            </div>                    
                         </div>
-                        <div class="block-content-div" style="display: block;">
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>
-                            #conent<br/>                   
-                            #conent<br/>
-                            #conent<br/>                   
-                        </div>                    
-                    </div>
 
+                    </div>
+                </main>        
+            </div>        
+
+            <footer>            
+                <div id="footer-copyright-div">
+                    © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
                 </div>
-            </main>        
+            </footer>
+            
         </div>        
-                
-        <footer>            
-            <div id="footer-copyright-div">
-                © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
-            </div>
-        </footer>
                 
     </body>
 </html>

@@ -36,6 +36,10 @@
         margin-right: auto;        
     }
 
+    .body-base-wrapper {
+        background-color: var(--aside-bg-color);
+    }
+    
     header {
         height: var(--header-height-g);
     }
@@ -131,7 +135,7 @@
 
     #center-content-div {
         background-color: var(--aside-bg-color);
-        overflow: auto;
+        /*overflow: auto;*/         /* ezzel bejön egy belső scroll, ami nem kell */
     }
     
     aside {
@@ -263,20 +267,114 @@
     
     .block-openclose-icon-div img {
         float: left;
-        width: 1.5em;
-        height: 1.5em;
-        padding: 0.3em 0 0 0;
+        width: 1.3em;
+        height: 1.3em;
+        padding: 0.4em 0 0 0;
     }
     
     .block-title-text-div {
-        padding: 0.4em 0 0 2em;
+        padding: 0.4em 0 0 1.4em;
         font-size: 1.2em;
         font-weight: bold;
     }
     
     .block-content-div {
         background-color: #ffffff;
+        /*padding: 0.5em;*/
+    }
+    
+    .block-content-header {
         padding: 0.5em;
+        background-color: #ededed;
+        min-height: 2em;
+    }
+    
+    block-content-header label {
+        margin: 0.2em 0 0 0;
+    }
+    
+    .block-content-main {
+        padding: 0.5em;
+        background-color: #ffffff;
+        font-size: 0.9em;
+    }
+    
+    .block-content-footer {
+        padding: 0.5em;
+        background-color: #ededed;
+        min-height: 2em;
+    }
+    
+    .form-description-text {
+        padding: 0.5em 0 0 0;
+        font-size: 0.8em;
+        font-weight: bold;
+    }        
+    
+    .form-button {
+        display: block;        
+        width: 8em;
+        height: 2.5em;
+        margin: 0 0 0 0.4em;
+        border-style: none;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8em;
+        cursor: pointer;
+        border-radius: 0.4em;
+        outline: none;
+    }
+    
+    .form-header-button {
+        float: right;
+    }
+    
+    .form-footer-button {
+        float: left;
+    }
+    
+    .form-blue-button {
+        background-color: #4a8bf5;
+    }
+    
+    .form-blue-button:hover {
+        background-color: #3b6ec2;
+    }
+    
+    .form-tblue-button {
+        background-color: #3ab2d0;
+    }
+        
+    .form-tblue-button {
+        background-color: #3ab2d0;
+    }
+    
+    .form-tblue-button:hover {        
+        background-color: #2c879e;
+    }
+    
+    .form-orange-button {
+        background-color: #fd7037;
+    }
+    
+    .form-orange-button:hover {        
+        background-color: #c9592c;
+    }
+    
+    .form-green-button {
+        background-color: #45bf7b;
+    }
+    
+    .form-green-button:hover {        
+        background-color: #338c5a;
+    }
+    
+    .form-yellow-button {
+        background-color: #fda737;
+    }
+    
+    .form-yellow-button:hover {        
+        background-color: #c9852c;
     }
     
     footer {
