@@ -131,11 +131,12 @@
         padding: 0;
         margin-bottom: 0;
         background-color: #ed3d3d;
+        height: auto;
     }
     
     .registration-message-wrapper {
         display: block;
-        padding: 1em 0 0 0;
+        padding: 1em 0 1em 0;
         text-align: center;
         font-weight: normal;
         font-size: 1em;        

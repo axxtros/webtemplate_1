@@ -510,12 +510,13 @@ function registrationDialogCalcPos() {
     }
 }
 
-function registrationSendEvent(isSuccess, message) {    
+function registrationSendEvent(isSuccess) {    
     $('.registration-message-panel').css('display', 'block');
     if(isSuccess) {
         $('.registration-message-panel').css('background-color', SUCCESS_COLOR);        
     } else {
         $('.registration-message-panel').css('background-color', ERROR_COLOR);
     }
-    $('.registration-message-wrapper').text(message);
+//    var errorMsg = $('.registration-message-wrapper').text().split('<br/>').join('\n');
+//    $('.registration-message-wrapper').text(errorMsg);
 }
