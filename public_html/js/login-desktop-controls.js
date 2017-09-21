@@ -401,7 +401,7 @@ function registrationDialogOpenEvent() {
     $('.disabled-background-html-base').css('display', 'block');
     registrationDialogCalcPos();
     $('.registration-message-panel').css('display', 'none');
-    $('.registration-panel').css('display', 'block');
+    $('.registration-panel').css('display', 'block');    
 }
 
 function registrationDialogCloseEvent() {
