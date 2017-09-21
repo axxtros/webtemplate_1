@@ -379,7 +379,39 @@
     }
     
     .parallax-3 {
-        background-image: url("../../img/login/7.jpg");
+        background-image: url("../../img/login/8.jpg");
+    }
+    
+    .prominent-text {
+        display: table-cell;
+        /*color: #877907;*/
+    }
+    
+    .prominent-text-height-1 {
+        font-size: 3em;
+        font-weight: bold;
+        padding: 0.5em;
+        vertical-align: middle;        
+    }
+    
+    .prominent-text-height-2 {
+        font-size: 2em;
+        padding: 0.5em 0.9em 0.5em 0.9em;
+        vertical-align: middle;        
+    }
+    
+    .prominent-text-left {
+        float: left;        
+        clear: both;
+    }
+    
+    .prominent-text-right {        
+        float: right;        
+        clear: both;
+    }
+    
+    .prominent-text-first-line {
+        padding-top: 5em;
     }
     
     .forgot-password-base {
