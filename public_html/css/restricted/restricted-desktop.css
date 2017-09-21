@@ -377,6 +377,14 @@
         background-color: #c9852c;
     }
     
+    .form-red-button {
+        background-color: #d04f3a;
+    }
+    
+    .form-red-button:hover {        
+        background-color: #9e3c2c;
+    }
+    
     footer {
         background-color: var(--footer-bg-color);
         border-bottom: 1px solid #ededed;
