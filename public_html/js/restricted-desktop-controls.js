@@ -107,10 +107,6 @@ function openModalDialog(type, title, message) {
         event.preventDefault();
     }
     
-    $('.disabled-background-html-base').css('display', 'block');
-    
-    $('.dialog-modal-draggable-header-wrapper label').text(title);
-    
     switch(type) {
         case 'INFO' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
         case 'WARN' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#fd7037'); break;
@@ -119,6 +115,7 @@ function openModalDialog(type, title, message) {
         default     : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
     }
     
+    $('.dialog-modal-draggable-header-wrapper label').text(title);
     $('.dialog-modal-draggable-content-wrapper').text(message);
     
     var bodyWidth = $(document.body).width();
@@ -132,6 +129,7 @@ function openModalDialog(type, title, message) {
     $('.dialog-modal-draggable').css('width', MODAL_DRAGGABLE_DIALOG_DEFAULT_WIDTH);    
     //$('.dialog-modal-draggable').css('height', MODAL_DRAGGABLE_DIALOG_DEFAULT_HEIGHT);    
         
+    $('.disabled-background-html-base').css('display', 'block');
     $('.dialog-modal-draggable').css('display', 'block');    
 }
 
