@@ -23,11 +23,10 @@
         --header-logo-bg-color: #51d2b7;
         --header-user-bg-color: #ffffff;
         --nav-bg-color: #f7f7f7;
-        --aside-bg-color: #2a2d33;
-        --main-bg-color: #ffffff;
-        --footer-bg-color: #ededed;
-        --side-menu-text-color: #898c95;        //#aeaeb0;
-        --side-menu-item-color: #898c95;        //R:137 G:140 B:149     -> ezek az oldalsó menű ikonjainak alapszine, + megnyitva fehér #ffffff
+        --aside-bg-color: #2a2d33;              //oldal menü háttérszine
+        --side-menu-text-color: #898c95;        //R:137 G:140 B:149     + ez az oldalsó menű ikonjainak az alapszine is, + megnyitva fehér #ffffff        
+        --main-bg-color: #ffffff;               //a main content alap háttérszine
+        --footer-bg-color: #ededed;             //lábléc háttérszine
     }
     
     body {
@@ -149,10 +148,10 @@
         padding: 1em 0 1em 0;        
     }
     
-    .side-menu-block-title {
-        border-bottom: 1px solid #7f8083;
-        padding: 0 0 0.5em 1em;
-        color: #7f8083;
+    .side-menu-block-title {        
+        border-bottom: 1px solid var(--side-menu-text-color);        
+        padding: 0 0 0.5em 1em;        
+        color: var(--side-menu-text-color);
         font-weight: bold;
         font-size: 0.8em;
     }
