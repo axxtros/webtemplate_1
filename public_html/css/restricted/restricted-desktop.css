@@ -23,10 +23,10 @@
         --header-logo-bg-color: #51d2b7;
         --header-user-bg-color: #ffffff;
         --nav-bg-color: #f7f7f7;
-        --aside-bg-color: #2a2d33;              //oldal menü háttérszine
-        --side-menu-text-color: #898c95;        //R:137 G:140 B:149     + ez az oldalsó menű ikonjainak az alapszine is, + megnyitva fehér #ffffff        
-        --main-bg-color: #ffffff;               //a main content alap háttérszine
-        --footer-bg-color: #ededed;             //lábléc háttérszine
+        --aside-bg-color: #2a2d33;              /* oldal menü háttérszine */
+        --side-menu-text-color: #898c95;        /* R:137 G:140 B:149 + ez az oldalsó menű ikonjainak az alapszine is, + megnyitva fehér #ffffff */
+        --main-bg-color: #ffffff;               /* a main content alap háttérszine */
+        --footer-bg-color: #ededed;             /* lábléc háttérszine */
     }
     
     body {
