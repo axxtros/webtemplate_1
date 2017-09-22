@@ -137,6 +137,5 @@ function openModalDialog(type, title, message) {
 
 function closeModalDialog() {
     $('.dialog-modal-draggable').css('display', 'none');
-    $('.disabled-background-html-base').css('display', 'none');
-    
+    $('.disabled-background-html-base').css('display', 'none');    
 }
