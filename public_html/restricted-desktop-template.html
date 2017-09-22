@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/restricted/restricted-main.css">        
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
         <script type="text/javascript" src="js/restricted-desktop-controls.js"></script>
     </head>
     <body onload="pageOnLoadEvent();" onresize="setMessageNotificationDiv();" onscroll="setMessageNotificationDiv();">
@@ -44,7 +46,7 @@
                             </div>                        
                         </div>
                     </div>                
-                </div>
+                </div>                
             </header>
 
             <nav>
@@ -120,7 +122,7 @@
                                     <div class="side-menu-item-submenu-wrapper-div">
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="javascript:void(0)">
                                                     <div class="side-menu-item-submenu-item-wrapper-div" onmouseover="selectedSideMenuItemIconChange(this);" onmouseout="unSelectedSideMenuItemIconChange(this);" onclick="openCloseSideMenuSubMenu(this);">
                                                         <div class="side-menu-item-submenu-icon">
                                                             <img class="side-menu-item-submenu-icon-img" src="img/restricted-sidemenu-icons/sub-menu-icon-close-fill.svg" alt="Documents menu">
@@ -326,12 +328,32 @@
                             </div>
                             <div class="block-content-div" style="display: block;">
                                 <div class="block-content-header">
-                                    <input class="form-button form-tblue-button form-header-button" type="button" value="Turkise button" />
-                                    <input class="form-button form-orange-button form-header-button" type="button" value="Orange button" />                                
-                                    <input class="form-button form-blue-button form-header-button" type="button" value="Blue button" />
-                                    <input class="form-button form-green-button form-header-button" type="button" value="Green button" />
+                                    <input class="form-button form-tblue-button form-header-button" type="button" value="Turkish button" />
+                                    <input class="form-button form-orange-button form-header-button" type="button" value="WARN Dialog" 
+                                           onclick="openModalDialog('WARN', 
+                                                                    'Figyelmeztetés!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>                                
+                                    <input class="form-button form-blue-button form-header-button" type="button" value="INF Dialog" 
+                                           onclick="openModalDialog('INFO', 
+                                                                    'Információ!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
+                                    <input class="form-button form-green-button form-header-button" type="button" value="SUCC Dialog" 
+                                           onclick="openModalDialog('SUCC', 
+                                                                    'Sikerült...', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
                                     <input class="form-button form-yellow-button form-header-button" type="button" value="Yellow button" />
-                                    <input class="form-button form-red-button form-header-button" type="button" value="Red button" />
+                                    <input class="form-button form-red-button form-header-button" type="button" value="ERR Dialog" 
+                                           onclick="openModalDialog('ERR', 
+                                                                    'Hiba!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
                                 </div>                            
                                 <div class="block-content-main">
                                     #form content with button on header and footer<br/>
@@ -422,7 +444,22 @@
                     © Copyright by Axtros 2017 | Lynxstudio v.0.1.0001
                 </div>
             </footer>
-                        
+                
+            <div class="disabled-background-html-base"></div>
+            
+            <div class="dialog-modal-draggable">
+                <div class="dialog-modal-draggable-header-wrapper">
+                    <label>#dialog header</label>
+                    <img src="img/login-icons/password-forget-close-dialog-icon.svg" alt="close" onclick="closeModalDialog();">
+                </div>
+                <div class="dialog-modal-draggable-content-wrapper">
+                    #dialog content
+                </div>
+                <div class="dialog-modal-draggable-button-wrapper">
+                    <input class="form-button form-black-button form-center-button" type="button" value="BEZÁR" onclick="closeModalDialog();"/>
+                </div>
+            </div>
+            
         </div>        
                 
     </body>

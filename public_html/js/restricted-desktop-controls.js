@@ -7,8 +7,23 @@
 var SIDE_MENU_SUBMENU_ANIMATION_SPEED = 300;
 var BLOCK_TOGGLE_ANIMATION_SPEED = 500;
 
+var MODAL_DRAGGABLE_DIALOG_DEFAULT_WIDTH = 600;   //px
+var MODAL_DRAGGABLE_DIALOG_DEFAULT_HEIGHT = 200;   //px
+
 function pageOnLoadEvent() {
+    initClientMetadatas();
     setMessageNotificationDiv();
+    initUIEffects();
+}
+
+/**
+ * jQuery UI effects init. (http://jqueryui.com/)
+ * @returns {undefined}
+ */
+function initUIEffects() {
+    $( function() {
+        $('.dialog-modal-draggable').draggable();
+    });
 }
 
 function setMessageNotificationDiv() {
@@ -42,7 +57,7 @@ function openCloseSideMenuSubMenu(parentmenuitem) {
     }
 }
 
-function selectedSideMenuItemIconChange(menuitem) {
+function selectedSideMenuItemIconChange(menuitem) {    
     if(menuitem !== null) {
         var imageitem = $(menuitem).children().children();
         if(imageitem !== null) {
@@ -78,4 +93,50 @@ function openCloseContentPanelBlock(contentblock) {
             }            
         });
     }
+}
+
+/**
+ * Megnyit egy modális dialógus ablakot.
+ * @param {type} type Típus: info, warn, err, succ
+ * @param {type} title Az ablak címe
+ * @param {type} message Az ablaklban feladott üzenet
+ * @returns {undefined}
+ */
+function openModalDialog(type, title, message) {
+    if(browserName !== BROWSER_FIREFOX_NAME) {
+        event.preventDefault();
+    }
+    
+    $('.disabled-background-html-base').css('display', 'block');
+    
+    $('.dialog-modal-draggable-header-wrapper label').text(title);
+    
+    switch(type) {
+        case 'INFO' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
+        case 'WARN' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#fd7037'); break;
+        case 'ERR'  : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#d04f3a'); break;
+        case 'SUCC' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#45bf7b'); break; 
+        default     : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
+    }
+    
+    $('.dialog-modal-draggable-content-wrapper').text(message);
+    
+    var bodyWidth = $(document.body).width();
+    var bodyOffset = $(document.body).offset().left;
+    var leftPos = bodyOffset + ((bodyWidth / 2) - (MODAL_DRAGGABLE_DIALOG_DEFAULT_WIDTH / 2));
+    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var topPos = ((viewportHeight / 2) - (MODAL_DRAGGABLE_DIALOG_DEFAULT_HEIGHT / 2));
+    
+    $('.dialog-modal-draggable').css('top', topPos + 'px');
+    $('.dialog-modal-draggable').css('left', leftPos + 'px');
+    $('.dialog-modal-draggable').css('width', MODAL_DRAGGABLE_DIALOG_DEFAULT_WIDTH);    
+    //$('.dialog-modal-draggable').css('height', MODAL_DRAGGABLE_DIALOG_DEFAULT_HEIGHT);    
+        
+    $('.dialog-modal-draggable').css('display', 'block');    
+}
+
+function closeModalDialog() {
+    $('.dialog-modal-draggable').css('display', 'none');
+    $('.disabled-background-html-base').css('display', 'none');
+    
 }

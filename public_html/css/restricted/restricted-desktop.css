@@ -332,6 +332,10 @@
         float: left;
     }
     
+    .form-center-button {
+        margin: 0 auto;
+    }
+    
     .form-blue-button {
         background-color: #4a8bf5;
     }
@@ -384,6 +388,14 @@
         background-color: #9e3c2c;
     }
     
+    .form-black-button {
+        background-color: #000000;
+    }
+    
+    .form-black-button:hover {        
+        background-color: #2a2d33;
+    }
+    
     footer {
         background-color: var(--footer-bg-color);
         border-bottom: 1px solid #ededed;
@@ -396,6 +408,66 @@
         float: right;
         font-size: 0.8em;
         padding: 0.8em 1em 0 0;
+    }
+    
+    .disabled-background-html-base {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        background: #000000;
+        opacity: 0.4;
+        z-index: 998;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .dialog-modal-draggable {
+        display: none;
+        position: fixed;
+        z-index: 1000;        
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .dialog-modal-draggable-header-wrapper {
+        display: block;
+        width: 100%;
+        height: 30px;        
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    .dialog-modal-draggable-header-wrapper label {
+        float: left;
+        color : #ffffff;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 0.4em 0 0 0.6em;
+    }
+    
+    .dialog-modal-draggable-header-wrapper img {
+        float: right;
+        width: 1.3em;
+        height: 1.3em;
+        padding: 0.4em 0.5em 0 0;
+    }
+    
+    .dialog-modal-draggable-header-wrapper img:hover {
+        cursor: pointer;
+    }
+    
+    .dialog-modal-draggable-content-wrapper {
+        display: block;        
+        height: auto;
+        padding: 1em;
+        font-size: 0.8em;
+        text-align: justify;
+    }
+    
+    .dialog-modal-draggable-button-wrapper {
+        display: block;
+        padding: 0 1em 1em 1em;
     }
     
 }
