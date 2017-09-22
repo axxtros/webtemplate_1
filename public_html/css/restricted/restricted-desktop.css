@@ -127,9 +127,11 @@
     }        
     
     nav {
-        background-color: var(--nav-bg-color);
-        border-bottom: 1px solid #e4e4e4;
         display: none;  /* ha kell, akkor itt jelenítsd meg, és adj hozzá css-t */
+        height: 30px;
+        background-color: var(--aside-bg-color);
+        color: var(--side-menu-text-color);
+        /*border-bottom: 1px solid #e4e4e4;*/
     }
 
     #center-content-div {
@@ -337,63 +339,135 @@
     }
     
     .form-blue-button {
-        background-color: #4a8bf5;
+        background: linear-gradient(#9dc3f4, #3e78b7);
+        border: 1px solid #7692b7;
+        color: #2e64a0;
     }
     
     .form-blue-button:hover {
-        background-color: #3b6ec2;
+        background: linear-gradient(#3e78b7, #9dc3f4);
+        color: white;
     }
     
     .form-tblue-button {
-        background-color: #3ab2d0;
-    }
-        
-    .form-tblue-button {
-        background-color: #3ab2d0;
-    }
+        background: linear-gradient(#acdaf4, #6da1b9);
+        border: 1px solid #6697a8;
+        color: #296985;
+    }            
     
     .form-tblue-button:hover {        
-        background-color: #2c879e;
+        background: linear-gradient(#6da1b9, #acdaf4);
+        color: white;
     }
     
     .form-orange-button {
-        background-color: #fd7037;
+        background: linear-gradient(#f6c88c, #f79b36);
+        border: 1px solid #c28a3f;
+        color: #b16e17;
     }
     
     .form-orange-button:hover {        
-        background-color: #c9592c;
+        background: linear-gradient(#f79b36, #f6c88c);
+        color: white;
     }
     
     .form-green-button {
-        background-color: #45bf7b;
+        background: linear-gradient(#b1ecaa, #73d56e);
+        border: 1px solid #4f945b;
+        color: #257421;
     }
     
     .form-green-button:hover {        
-        background-color: #338c5a;
+        background: linear-gradient(#73d56e, #b1ecaa);
+        color: black;
     }
     
     .form-yellow-button {
-        background-color: #fda737;
+        background: linear-gradient(#f7f2ae, #e9df70);
+        border: 1px solid #b0ad5e;
+        color: #ae9e2d;
     }
     
     .form-yellow-button:hover {        
-        background-color: #c9852c;
+        background: linear-gradient(#e9df70, #f7f2ae);
+        color: black;
     }
     
     .form-red-button {
-        background-color: #d04f3a;
+        background: linear-gradient(#f7948f, #d14745);
+        border: 1px solid #9c4041;
+        color: #a9161c;
     }
     
     .form-red-button:hover {        
-        background-color: #9e3c2c;
+        background: linear-gradient(#d14745, #f7948f);
+        color: white;
     }
     
     .form-black-button {
-        background-color: #000000;
+        background: linear-gradient(#424242, #343434);
+        border: 1px solid #141414;
+        color: #fafafa;
     }
     
     .form-black-button:hover {        
-        background-color: #2a2d33;
+        background: linear-gradient(#343434, #424242);
+        color: black;
+    }
+    
+    .form-grey-button {        
+        background: linear-gradient(#e2e2e2, #b4b4b4);
+        border: 1px solid #9a9a9a;
+        color: #666666;
+    }
+    
+    .form-grey-button:hover {        
+        background: linear-gradient(#b4b4b4, #e2e2e2);        
+        color: white;
+    }
+    
+    .form-grey-1-button {        
+        background: linear-gradient(#f3f4f8, #dae1e9);
+        border: 1px solid #acafb4;
+        color: #4b5056;
+    }
+    
+    .form-grey-1-button:hover {        
+        background: linear-gradient(#dae1e9, #f3f4f8);
+        color: white;
+    }
+    
+    .form-grey-2-button {        
+        background: linear-gradient(#cdd0d7, #a6aab6);
+        border: 1px solid #82828a;
+        color: #686c78;
+    }
+    
+    .form-grey-2-button:hover {        
+        background: linear-gradient(#a6aab6, #cdd0d7);
+        color: white;
+    }
+    
+    .form-grey-3-button {        
+        background: linear-gradient(#888a96, #61687a);
+        border: 1px solid #54575e;
+        color: #f6f9fe;
+    }
+    
+    .form-grey-3-button:hover {        
+        background: linear-gradient(#61687a, #888a96);
+        color: black;
+    }
+    
+    .form-grey-4-button {        
+        background: linear-gradient(#64697c, #383e4c);
+        border: 1px solid #353743;
+        color: #f2f2fa;
+    }
+    
+    .form-grey-4-button:hover {        
+        background: linear-gradient(#383e4c, #64697c);
+        color: black;
     }
     
     footer {

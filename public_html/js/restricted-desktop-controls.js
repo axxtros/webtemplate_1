@@ -107,12 +107,12 @@ function openModalDialog(type, title, message) {
         event.preventDefault();
     }
     
-    switch(type) {
-        case 'INFO' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
-        case 'WARN' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#fd7037'); break;
-        case 'ERR'  : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#d04f3a'); break;
-        case 'SUCC' : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#45bf7b'); break; 
-        default     : $('.dialog-modal-draggable-header-wrapper').css('background-color', '#4a8bf5'); break;
+    switch(type) {        
+        case 'INFO' : $('.dialog-modal-draggable-header-wrapper').css('background', 'linear-gradient(#9dc3f4, #3e78b7)'); break;
+        case 'WARN' : $('.dialog-modal-draggable-header-wrapper').css('background', 'linear-gradient(#f6c88c, #f79b36)'); break;
+        case 'ERR'  : $('.dialog-modal-draggable-header-wrapper').css('background', 'linear-gradient(#f7948f, #d14745)'); break;
+        case 'SUCC' : $('.dialog-modal-draggable-header-wrapper').css('background', 'linear-gradient(#b1ecaa, #73d56e)'); break;
+        default     : $('.dialog-modal-draggable-header-wrapper').css('background', 'linear-gradient(#9dc3f4, #3e78b7)'); break;
     }
     
     $('.dialog-modal-draggable-header-wrapper label').text(title);

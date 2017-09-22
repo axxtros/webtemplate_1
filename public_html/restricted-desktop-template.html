@@ -328,32 +328,12 @@
                             </div>
                             <div class="block-content-div" style="display: block;">
                                 <div class="block-content-header">
-                                    <input class="form-button form-tblue-button form-header-button" type="button" value="Turkish button" />
-                                    <input class="form-button form-orange-button form-header-button" type="button" value="WARN Dialog" 
-                                           onclick="openModalDialog('WARN', 
-                                                                    'Figyelmeztetés!', 
-                                                                    'Text...Lorem ipsum dolor sit amet, \n\
-                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
-                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>                                
-                                    <input class="form-button form-blue-button form-header-button" type="button" value="INF Dialog" 
-                                           onclick="openModalDialog('INFO', 
-                                                                    'Információ!', 
-                                                                    'Text...Lorem ipsum dolor sit amet, \n\
-                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
-                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
-                                    <input class="form-button form-green-button form-header-button" type="button" value="SUCC Dialog" 
-                                           onclick="openModalDialog('SUCC', 
-                                                                    'Sikerült...', 
-                                                                    'Text...Lorem ipsum dolor sit amet, \n\
-                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
-                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
-                                    <input class="form-button form-yellow-button form-header-button" type="button" value="Yellow button" />
-                                    <input class="form-button form-red-button form-header-button" type="button" value="ERR Dialog" 
-                                           onclick="openModalDialog('ERR', 
-                                                                    'Hiba!', 
-                                                                    'Text...Lorem ipsum dolor sit amet, \n\
-                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
-                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')" style="color: white;"/>
+                                    <input class="form-button form-grey-button form-header-button" type="button" value="Grey" />
+                                    <input class="form-button form-grey-1-button form-header-button" type="button" value="Grey 1" />
+                                    <input class="form-button form-grey-2-button form-header-button" type="button" value="Grey 2" />
+                                    <input class="form-button form-grey-3-button form-header-button" type="button" value="Grey 3" />
+                                    <input class="form-button form-grey-4-button form-header-button" type="button" value="Grey 4" />
+                                    <input class="form-button form-black-button form-header-button" type="button" value="Black" />                                    
                                 </div>                            
                                 <div class="block-content-main">
                                     #form content with button on header and footer<br/>
@@ -365,13 +345,33 @@
                                     #form content with button on header and footer<br/>                                
                                     #form content with button on header and footer<br/>                                
                                 </div>                            
-                                <div class="block-content-footer">
+                                <div class="block-content-footer">                                    
                                     <input class="form-button form-tblue-button form-footer-button" type="button" value="Turkise button" />
-                                    <input class="form-button form-orange-button form-footer-button" type="button" value="Orange button" />                                
-                                    <input class="form-button form-blue-button form-footer-button" type="button" value="Blue button" />
-                                    <input class="form-button form-green-button form-footer-button" type="button" value="Green button" />
+                                    <input class="form-button form-orange-button form-footer-button" type="button" value="Orange button" 
+                                           onclick="openModalDialog('WARN', 
+                                                                    'Figyelmeztetés!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')"/>                                
+                                    <input class="form-button form-blue-button form-footer-button" type="button" value="Blue button" 
+                                           onclick="openModalDialog('INFO', 
+                                                                    'Információ!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')"/>
+                                    <input class="form-button form-green-button form-footer-button" type="button" value="Green button" 
+                                           onclick="openModalDialog('SUCC', 
+                                                                    'Sikerült...', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')"/>
                                     <input class="form-button form-yellow-button form-footer-button" type="button" value="Yellow button" />
-                                    <input class="form-button form-red-button form-footer-button" type="button" value="Red button" />
+                                    <input class="form-button form-red-button form-footer-button" type="button" value="Red button" 
+                                           onclick="openModalDialog('ERR', 
+                                                                    'Hiba!', 
+                                                                    'Text...Lorem ipsum dolor sit amet, \n\
+                                                                    consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...\n\
+                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit...')"/>                                    
                                 </div>
                             </div>                    
                         </div>
@@ -456,7 +456,7 @@
                     #dialog content
                 </div>
                 <div class="dialog-modal-draggable-button-wrapper">
-                    <input class="form-button form-black-button form-center-button" type="button" value="BEZÁR" onclick="closeModalDialog();"/>
+                    <input class="form-button form-grey-button form-center-button" type="button" value="BEZÁR" onclick="closeModalDialog();"/>
                 </div>
             </div>
             
